@@ -64,7 +64,7 @@ Ok, this is good stuff to have ready, but it doesn't point towards any particula
 
 ### Small $n$ casework
 
-Taking $S=\{0\}$ (where $0$ denotes the zero vector) shows that $n=1$ works as well, as $0\times 0=0$.
+Taking $S=\{0\}$ (where $0$ denotes the zero vector) shows that $n=1$ works, as $0\times 0=0$. 
 
 The next case to consider is when $S$ contains some nonzero vector $v$. It follows that $0\in S$ since $v\times v=0$ (by Property 3 above). Is it possible that $S=\{0,v\}$? Recall that $S$ is equal to the set of all cross products of pairs of elements in $S$. Since $$0\times 0=0\times v=v\times 0=v\times v=0,$$ we see that $v$ is not the cross product of any pair of elements in $\{0,v\}$. Since $v$ is nonzero, it must be the cross product of two nonzero elements of $S$ both orthogonal to $v$, so $v=u\times w$ for some nonzero $u,w\in S$.
 
