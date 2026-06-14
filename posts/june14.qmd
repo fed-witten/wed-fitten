@@ -72,7 +72,7 @@ Starting from a nonzero vector $v\in S$, we used the definition of $S$ and Prope
 
 We know that $u,w,$ and $v=u\times w$ are all in $S$. It follows from the definition of $S$ that $w\times u$ is also in $S$, and Property 2 implies that $$w\times u=-u\times w=-v\in S.$$ Similarly, $u$ and $w$ are both cross products of elements of $S$ by the definition of $S$, so $-u,-w\in S$ as well. Thus, $$\{0,u,v,w,-u,-v,-w\}\subset S.$$
 
-**Insight.** If we take $u={\bf i}$, $v={\bf j}$, $w={\bf k}$ where ${\bf i}, {\bf j}, {\bf k}$ are the standard basis vectors for $\RR^3$, we in fact have (exercise for the reader!) $$S=\{0,\pm {\bf i}, \pm {\bf j}, \pm {\bf k}\}.$$ At this point we have shown that $n=0,1,7$ all work, and if $S$ contains a nonzero vector then $n=|S|\geq 7$.
+**Insight.** If we take $u={\bf i}$, $w={\bf j}$, $v={\bf k}$ where ${\bf i}, {\bf j}, {\bf k}$ are the standard basis vectors for $\RR^3$, we in fact have (exercise for the reader!) $$S=\{0,\pm {\bf i}, \pm {\bf j}, \pm {\bf k}\}.$$ At this point we have shown that $n=0,1,7$ all work, and if $S$ contains a nonzero vector then $n=|S|\geq 7$.
 
 ### Wielding Property 3
 
