@@ -107,5 +107,5 @@ What happens if $u,v,w$ are all orthogonal?
 ::: {.callout-note collapse="true" icon=false appearance="simple"}
 ## Hint 3.
 
-$$1=\|v\|=\|u\times w\|=\|u\|\|w\|\sin\theta=\sin\theta$$ by Property 3 and the fact that we assumed $u,v,w$ have norm 1.
+$$1=\|v\|=\|u\times w\|=\|u\|\|w\|\sin\theta=\sin\theta$$ where $\theta$ is the angle between $u$ and $w$ by Property 3 and the fact that we assumed $u,v,w$ have norm 1.
 :::
