@@ -1,0 +1,10 @@
+---
+title: "mathslop dot org"
+---
+
+Goal is to write some math every day. I make no promise on quality, but ideally these get better over time.
+
+## Daily Math
+
+- [6/14: Problem B2 from the 2022 Putnam](posts/june14.qmd)
+- [6/13: Problem B3 from the 2022 Putnam](posts/june13.qmd)
