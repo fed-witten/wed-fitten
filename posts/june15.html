@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-06-15">
 
-<title>mathslop dot org – mathslop</title>
+<title>Problem B1, 2025 Putnam Mathematical Competition – mathslop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +27,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,8 +72,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -82,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">mathslop</span>
     </a>
   </div>
@@ -93,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -112,7 +142,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#daily-math" id="toc-daily-math" class="nav-link active" data-scroll-target="#daily-math">Daily Math</a></li>
+  <li><a href="#thinking" id="toc-thinking" class="nav-link active" data-scroll-target="#thinking">Thinking</a></li>
+  <li><a href="#meta-commentintuitionvisual-argument-for-the-final-touches" id="toc-meta-commentintuitionvisual-argument-for-the-final-touches" class="nav-link" data-scroll-target="#meta-commentintuitionvisual-argument-for-the-final-touches">Meta comment/intuition/visual argument for the final touches</a></li>
+  <li><a href="#finishing-touches" id="toc-finishing-touches" class="nav-link" data-scroll-target="#finishing-touches">Finishing touches</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments">Comments</a></li>
   </ul>
 </nav>
     </div>
@@ -121,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">mathslop dot org</h1>
+<h1 class="title">Problem B1, 2025 Putnam Mathematical Competition</h1>
 </div>
 
 
@@ -129,6 +162,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 15, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -138,14 +177,77 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Goal is to write some math every day. I make no promise on quality, but ideally these get better over time.</p>
-<section id="daily-math" class="level2">
-<h2 class="anchored" data-anchor-id="daily-math">Daily Math</h2>
-<ul>
-<li><a href="./posts/june15.html">6/15: ???</a></li>
-<li><a href="./posts/june14.html">6/14: Problem B2 from the 2022 Putnam</a></li>
-<li><a href="./posts/june13.html">6/13: Problem B3 from the 2022 Putnam</a></li>
-</ul>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+\]</span></p>
+</div>
+<p>I was going to stop with competition problems, but I looked at the 2025 exam and saw there was a fun-looking problem that involved a coloring procedure similar to that of Problem B3 from 2022:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Problem B1, 2025 Putnam Mathematical Competition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that every point in the plane is colored either red or green, subject to the following condition: For every three noncollinear points <span class="math inline">\(A,B,C\)</span> of the same color, the center of the circle passing through <span class="math inline">\(A,B\)</span> and <span class="math inline">\(C\)</span> is also of this color. Prove that all points of the plane are the same color.</p>
+</div>
+</div>
+<p>Unlike the previous two posts, I had not seen this problem before today, so I may or may not obtain a complete solution. I’ll simply write out my thought process with minimal editing.</p>
+<p><em>Later: I think I came up with something approximating a solution here, but I’ve not proofread it carefully, and there are some places I could be more detailed.</em></p>
+<section id="thinking" class="level2">
+<h2 class="anchored" data-anchor-id="thinking">Thinking</h2>
+<p><em>I will use the character 0 to represent both the real number 0 and the origin of the plane, not because it is not confusing, but because I am too lazy to go back and make edits.</em></p>
+<p>My first thought was to first prove that, say, some circle centered at the origin contains e.g.&nbsp;only red points, then see if I could use this to show that a circle of any radius has only red points.</p>
+<p>Suppose I succeed in showing there is some closed disk <span class="math inline">\(D_r\)</span> with radius <span class="math inline">\(r&gt;0\)</span> centered at <span class="math inline">\(0\)</span> such that all points of <span class="math inline">\(D_r\)</span> are, say, red. Now, for <span class="math inline">\(R&gt;r\)</span>, let <span class="math display">\[C_R=\{(x,y)\in \RR^2:x^2+y^2=R^2\}\]</span> be the circle of radius <span class="math inline">\(R\)</span> centered at 0.</p>
+<p>I claim that <span class="math inline">\(C_R\)</span> has at most two green points. Indeed, if there were three points <span class="math inline">\(A,B,C\in C_R\)</span> colored green, then by assumption the center of the circle passing through <span class="math inline">\(A,B,C\)</span> would have to be green. But the circle passing through <span class="math inline">\(A,B,C\)</span> is <span class="math inline">\(C_R\)</span>, which is centered at 0, and <span class="math inline">\(0\in D_r\)</span> is red by assumption. Thus, <span class="math inline">\(C_R\)</span> has at most two green points.</p>
+<p><em>At this point, I thought that maybe this observation about the circles is a more promising starting point, and restarted as follows:</em></p>
+<p>Suppose without loss of generality that <span class="math inline">\(0\)</span> is colored red. For each <span class="math inline">\(R&gt;0\)</span> and each <span class="math inline">\(P=(p_1,p_2)\in \RR^2\)</span> colored red, let <span class="math display">\[C_R(P)=\{(x,y)\in \RR^2:(x-p_1)^2+(y-p_2)^2=R^2\}\]</span> be the circle of radius <span class="math inline">\(R\)</span> centered at P.</p>
+<p>I claim that <span class="math inline">\(C_R(P)\)</span> has at most two green points. Indeed, if there were three points <span class="math inline">\(A,B,C\in C_R\)</span> colored green, then by assumption the center of the circle passing through <span class="math inline">\(A,B,C\)</span> would have to be green. But the circle passing through <span class="math inline">\(A,B,C\)</span> is <span class="math inline">\(C_R(P)\)</span>, which is centered at 0, which is red by assumption. Thus, <span class="math inline">\(C_R(P)\)</span> has at most two green points for all <span class="math inline">\(R&gt;0\)</span>.</p>
+<p>Similarly, for every point <span class="math inline">\(Q\in \RR^2\)</span> colored green, let <span class="math inline">\(C_r(Q)\)</span> be the circle of radius <span class="math inline">\(r\)</span> centered at <span class="math inline">\(Q\)</span>. Then, by the same reasoning as above, <span class="math inline">\(C_r(Q)\)</span> has at most two red points.</p>
+</section>
+<section id="meta-commentintuitionvisual-argument-for-the-final-touches" class="level2">
+<h2 class="anchored" data-anchor-id="meta-commentintuitionvisual-argument-for-the-final-touches">Meta comment/intuition/visual argument for the final touches</h2>
+<p><em>Here I try to explain the intuition for the last part of the argument, but I’m not sure it makes any sense. It is a representation of how I was thinking, though, so I’ll leave it. The next section is an attempt at translating this section into mathematics.</em></p>
+<p>At this point, it is clear that we must be close to being done. We know that <span class="math inline">\(0\)</span> is a red point, and we know that <em>every</em> circle centered at <span class="math inline">\(0\)</span> has at most two green points. This clearly implies that almost all points of <span class="math inline">\(\RR^2\)</span> are red. On the other hand, if there exists any green point <span class="math inline">\(Q\)</span> in <span class="math inline">\(\RR^2\)</span>, then the point above shows that every circle centered at <span class="math inline">\(Q\)</span> has at most two red points, so almost all points of <span class="math inline">\(\RR^2\)</span> are red.</p>
+<p>Using measure theory here to derive a contradiction would be stupid and against the spirit of this kind of problem. A more elementary idea is to fix some circle centered at 0 large enough to contain <span class="math inline">\(Q\)</span>. Then, take a circle centered at <span class="math inline">\(Q\)</span> that is small enough to be contained in the bigger circle. Slowly increase the radius of the small circle; eventually it will intersect the larger circle at one point, then for a while it will intersect at two points, then it will intersect at one point, and after that it will contain the other circle. But the circle containing <span class="math inline">\(0\)</span> has at most two green points, so in some interval the circles centered about <span class="math inline">\(Q\)</span> will “sweep out” a pair of arcs with only red points, and since each of these circles has at most two red points, the <em>region</em> that they sweep out will contain only green points. But part of this area is lying in the interior of our circle centered at <span class="math inline">\(0\)</span>, so there exists some smaller circle centered at <span class="math inline">\(0\)</span> intersecting an infinite number of green points. But a circle centered at <span class="math inline">\(0\)</span> has at most two green points; contradiction.</p>
+</section>
+<section id="finishing-touches" class="level2">
+<h2 class="anchored" data-anchor-id="finishing-touches">Finishing touches</h2>
+<p>Suppose there exists a point <span class="math inline">\(Q\in \RR^2\)</span> that is colored green (so <span class="math inline">\(Q\neq 0\)</span> since <span class="math inline">\(0\)</span> is red), and choose <span class="math inline">\(R&gt;0\)</span> large enough that <span class="math inline">\(Q\)</span> lies in the interior of the circle <span class="math inline">\(C_R(0).\)</span> Then, by above, <span class="math inline">\(C_R(0)\)</span> has at most two green points. Now let <span class="math inline">\(X\in C_R(0)\)</span> be the point of <span class="math inline">\(C_R(0)\)</span> of shortest distance from <span class="math inline">\(Q\)</span> (such <span class="math inline">\(X\)</span> exists and is unique since <span class="math inline">\(Q\)</span> is in the interior of <span class="math inline">\(C_R(0)\)</span> and <span class="math inline">\(Q\neq 0\)</span>). For <span class="math inline">\(t\in (0,\infty)\)</span>, consider the family of circles <span class="math inline">\(C_{d+t}(Q)\)</span>. Let <span class="math inline">\(t'&gt;0\)</span> be the value of <span class="math inline">\(t'\)</span> such that <span class="math inline">\(C_{d+t'}(Q)\)</span> intersects <span class="math inline">\(C_R(0)\)</span> at one point so that <span class="math display">\[|C_{d+t}(Q)\cap C_R(0)|=2\]</span> for all <span class="math inline">\(t\in (0,t')\)</span>.</p>
+<p>Since <span class="math inline">\(C_R(0)\)</span> has at most two green points, there exists an interval <span class="math inline">\((a,b)\subset (0,t')\)</span> such that both points in <span class="math inline">\(C_{d+t}(Q)\cap C_R(0)\)</span> are red for all <span class="math inline">\(t\in (a,b)\)</span>. Let <span class="math inline">\(B_R(0)\)</span> denote the ball of radius <span class="math inline">\(R\)</span> centered at <span class="math inline">\(0\)</span> so that <span class="math inline">\(C_R(0)\)</span> is its boundary. Now let <span class="math inline">\(R\)</span> be the region <span class="math display">\[R=\{(x,y):(x,y)\in C_{d+t}(Q)\cap B_R(0)\text{ for some }t\in (a,b)\}.\]</span> For each <span class="math inline">\(t\in (a,b)\)</span>, the two red points of <span class="math inline">\(C_{d+t}(Q)\)</span> both lie on <span class="math inline">\(C_R(0)\)</span>, so every point of <span class="math inline">\(R\)</span> is green.</p>
+<p>Now let <span class="math inline">\(\alpha=(a+b)/2\)</span> and let <span class="math inline">\(P\in C_{d+\alpha}(Q)\cap B_R(0)\)</span>. Then there exists an <span class="math inline">\(\varepsilon&gt;0\)</span> such that <span class="math display">\[B_\varepsilon(P)\subset R\subset B_R(0).\]</span> <em>I cannot be bothered to make this more rigorous at this point: over the interval <span class="math inline">\((a,b)\)</span>, the <span class="math inline">\(C_{d+t}(Q)\cap B_R(0)\)</span> sweep out a green region that clearly has positive area, so clearly there is an open ball in this region that is green.</em> Now choose a circle <span class="math inline">\(C\)</span> centered at <span class="math inline">\(0\)</span> such that <span class="math inline">\(C\cap B_\varepsilon(P)\)</span> contains infinitely many points. Since all the points of <span class="math inline">\(B_\varepsilon(P)\)</span> are green, this shows that <span class="math inline">\(C\)</span> has infinitely many green points. But <span class="math inline">\(C\)</span> is centered at the red point <span class="math inline">\(0\)</span>, so <span class="math inline">\(C\)</span> has at most two green points. Contradiction.</p>
+</section>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p>I think this works, but I’ve not done a true proofread. In any case, there is no way this is the intended solution; I’m sure there is a shorter and clearer way of going about.</p>
 
 
 </section>
