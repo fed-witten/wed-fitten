@@ -78,7 +78,7 @@ We know that $u,w,$ and $v=u\times w$ are all in $S$. It follows from the defini
 
 The results we obtained above seem like a natural stopping point where we should change direction; we cannot do casework forever, after all. We can make two important observations about the work we've done so far:
 
-**Observation 1.** In all the cases we've discovered so far that work ($n=0,1,7$), all the vectors in $S$ have norm equal to 0 or 1.
+**Observation 1.** In all the cases we've discovered so far that work ($n=1$ and $n=7$), all the vectors in $S$ have norm equal to 0 or 1.
 
 **Observation 2.** We've yet to (meaningfully) use Property 3 of the cross product.
 

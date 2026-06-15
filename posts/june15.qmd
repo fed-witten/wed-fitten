@@ -1,0 +1,84 @@
+---
+title: "Problem B1, 2025 Putnam Mathematical Competition"
+date: 06/15/26
+---
+
+::: {.hidden}
+$$
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+$$
+:::
+
+I was going to stop with competition problems, but I looked at the 2025 exam and saw there was a fun-looking problem that involved a coloring procedure similar to that of Problem B3 from 2022:
+
+::: {.callout-note icon=false}
+## Problem B1, 2025 Putnam Mathematical Competition
+
+Suppose that every point in the plane is colored either red or green, subject to the following condition: For every three noncollinear points $A,B,C$ of the same color, the center of the circle passing through $A,B$ and $C$ is also of this color. Prove that all points of the plane are the same color.
+:::
+
+Unlike the previous two posts, I had not seen this problem before today, so I may or may not obtain a complete solution. I'll simply write out my thought process with minimal editing.
+
+*Later: I think I came up with something approximating a solution here, but I've not proofread it carefully, and there are some places I could be more detailed.*
+
+## Thinking
+
+*I will use the character 0 to represent both the real number 0 and the origin of the plane, not because it is not confusing, but because I am too lazy to go back and make edits.*
+
+My first thought was to first prove that, say, some circle centered at the origin contains e.g. only red points, then see if I could use this to show that a circle of any radius has only red points.
+
+Suppose I succeed in showing there is some closed disk $D_r$ with radius $r>0$ centered at $0$ such that all points of $D_r$ are, say, red. Now, for $R>r$, let $$C_R=\{(x,y)\in \RR^2:x^2+y^2=R^2\}$$ be the circle of radius $R$ centered at 0.
+
+I claim that $C_R$ has at most two green points. Indeed, if there were three points $A,B,C\in C_R$ colored green, then by assumption the center of the circle passing through $A,B,C$ would have to be green. But the circle passing through $A,B,C$ is $C_R$, which is centered at 0, and $0\in D_r$ is red by assumption. Thus, $C_R$ has at most two green points.
+
+*At this point, I thought that maybe this observation about the circles is a more promising starting point, and restarted as follows:*
+
+Suppose without loss of generality that $0$ is colored red. For each $R>0$ and each $P=(p_1,p_2)\in \RR^2$ colored red, let $$C_R(P)=\{(x,y)\in \RR^2:(x-p_1)^2+(y-p_2)^2=R^2\}$$ be the circle of radius $R$ centered at P.
+
+I claim that $C_R(P)$ has at most two green points. Indeed, if there were three points $A,B,C\in C_R$ colored green, then by assumption the center of the circle passing through $A,B,C$ would have to be green. But the circle passing through $A,B,C$ is $C_R(P)$, which is centered at 0, which is red by assumption. Thus, $C_R(P)$ has at most two green points for all $R>0$.
+
+Similarly, for every point $Q\in \RR^2$ colored green, let $C_r(Q)$ be the circle of radius $r$ centered at $Q$. Then, by the same reasoning as above, $C_r(Q)$ has at most two red points.
+
+## Meta comment/intuition/visual argument for the final touches
+
+*Here I try to explain the intuition for the last part of the argument, but I'm not sure it makes any sense. It is a representation of how I was thinking, though, so I'll leave it. The next section is an attempt at translating this section into mathematics.*
+
+At this point, it is clear that we must be close to being done. We know that $0$ is a red point, and we know that *every* circle centered at $0$ has at most two green points. This clearly implies that almost all points of $\RR^2$ are red. On the other hand, if there exists any green point $Q$ in $\RR^2$, then the point above shows that every circle centered at $Q$ has at most two red points, so almost all points of $\RR^2$ are red. 
+
+Using measure theory here to derive a contradiction would be stupid and against the spirit of this kind of problem. A more elementary idea is to fix some circle centered at 0 large enough to contain $Q$. Then, take a circle centered at $Q$ that is small enough to be contained in the bigger circle. Slowly increase the radius of the small circle; eventually it will intersect the larger circle at one point, then for a while it will intersect at two points, then it will intersect at one point, and after that it will contain the other circle. But the circle containing $0$ has at most two green points, so in some interval the circles centered about $Q$ will "sweep out" a pair of arcs with only red points, and since each of these circles has at most two red points, the *region* that they sweep out will contain only green points. But part of this area is lying in the interior of our circle centered at $0$, so there exists some smaller circle centered at $0$ intersecting an infinite number of green points. But a circle centered at $0$ has at most two green points; contradiction.
+
+## Finishing touches
+
+Suppose there exists a point $Q\in \RR^2$ that is colored green (so $Q\neq 0$ since $0$ is red), and choose $R>0$ large enough that $Q$ lies in the interior of the circle $C_R(0).$ Then, by above, $C_R(0)$ has at most two green points. Now let $X\in C_R(0)$ be the point of $C_R(0)$ of shortest distance from $Q$ (such $X$ exists and is unique since $Q$ is in the interior of $C_R(0)$ and $Q\neq 0$). For $t\in (0,\infty)$, consider the family of circles $C_{d+t}(Q)$. Let $t'>0$ be the value of $t'$ such that $C_{d+t'}(Q)$ intersects $C_R(0)$ at one point so that $$|C_{d+t}(Q)\cap C_R(0)|=2$$ for all $t\in (0,t')$.
+
+Since $C_R(0)$ has at most two green points, there exists an interval $(a,b)\subset (0,t')$ such that both points in $C_{d+t}(Q)\cap C_R(0)$ are red for all $t\in (a,b)$. Let $B_R(0)$ denote the ball of radius $R$ centered at $0$ so that $C_R(0)$ is its boundary. Now let $R$ be the region $$R=\{(x,y):(x,y)\in C_{d+t}(Q)\cap B_R(0)\text{ for some }t\in (a,b)\}.$$ For each $t\in (a,b)$, the two red points of $C_{d+t}(Q)$ both lie on $C_R(0)$, so every point of $R$ is green.
+
+Now let $\alpha=(a+b)/2$ and let $P\in C_{d+\alpha}(Q)\cap B_R(0)$. Then there exists an $\varepsilon>0$ such that $$B_\varepsilon(P)\subset R\subset B_R(0).$$ *I cannot be bothered to make this more rigorous at this point: over the interval $(a,b)$, the $C_{d+t}(Q)\cap B_R(0)$ sweep out a green region that clearly has positive area, so clearly there is an open ball in this region that is green.* Now choose a circle $C$ centered at $0$ such that $C\cap B_\varepsilon(P)$ contains infinitely many points. Since all the points of $B_\varepsilon(P)$ are green, this shows that $C$ has infinitely many green points. But $C$ is centered at the red point $0$, so $C$ has at most two green points. Contradiction.
+
+## Comments
+
+I think this works, but I've not done a true proofread. In any case, there is no way this is the intended solution; I'm sure there is a shorter and clearer way of going about.
