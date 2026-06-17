@@ -6,6 +6,7 @@ Goal is to write some math every day. I make no promise on quality, but ideally 
 
 ## Daily Math
 
+- [6/17: An Elementary Number Theory Problem](posts/june17.qmd)
 - [6/16: Problem A1 from the 2024 Putnam](posts/june16.qmd)
 - [6/15: Problem B1 from the 2025 Putnam](posts/june15.qmd)
 - [6/14: Problem B2 from the 2022 Putnam](posts/june14.qmd)
