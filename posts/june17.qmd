@@ -63,7 +63,7 @@ It remains to show that any even integer can be written in the desired form. Let
 
 ## Job's Not Finished
 
-https://youtu.be/fY7l2pcxdHM?si=TxRsTObaMGatrn1g
+["Kobe, you solved the elementary number theory problem. What's going on? Are you not happy?"](https://youtu.be/fY7l2pcxdHM?si=TxRsTObaMGatrn1g)
 
 We solved the problem, but our job is not finished. Do we understand *why* all integers can be represented in the form $x^2+y^2-5z^2$? Who cares? What happens if we change $5$ to some other integer?
 
