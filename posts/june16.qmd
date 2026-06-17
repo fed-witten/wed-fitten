@@ -1,0 +1,60 @@
+---
+title: "Problem A1, 2024 Putnam Mathematical Competition"
+date: 06/16/26
+---
+
+::: {.hidden}
+$$
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Pic}{\text{Pic}}
+\newcommand{\Div}{\text{Div}}
+\newcommand{\Princ}{\text{Princ}}
+\newcommand{\Cl}{\text{Cl}}
+\newcommand{\ord}{\text{ord}}
+\newcommand{\Jac}{\text{Jac}}
+\newcommand{\Loc}{\text{Loc}}
+$$
+:::
+
+Today I am cheating and self-plagiarizing a solution to a problem I did months ago. I had started writing something about divisor class groups but it was bad; that will be the topic for tomorrow, hopefully. Either that or a first post on $p$-adic numbers, or on sheaves, or on cohomology. Or perhaps basic complex analysis to lead into Riemann surfaces. Whatever it is, it will be more interesting.
+
+::: {.callout-note icon=false}
+## Problem A1, 2024 Putnam Mathematical Competition
+
+Determine all positive integers $n$ for which there exist positive integers $a,b,c$ such that $$2a^n+3b^n=4c^n.$$
+:::
+
+For $n=1$ there are infinitely many solutions; one family of solutions is given by $a=t\in \ZZ^+$, $b=2t$, $c=2t$.
+
+Let $n>1$. By rearranging to $$3b^n=4c^n-2a^n=2(2c^n-a^n),$$ we see that $b$ must be even. Thus, we must have $b=2\beta$ for some $\beta\in \ZZ^+,$ and we have reduced solving the original equation to solving the equation $$2a^n+3\cdot2^n\beta^n=4c^n.$$ Rearranging again and using that $n>1$ (and therefore $n-2\geq 0$), we find that $$2a^n=4(2c^n-3\cdot2^{n-2}\beta^n),$$ so we conclude that $a$ is also even. Writing $a=2\alpha$, our equation becomes $$(1)\text{ }\text{ }\text{ }2^{n+1}\alpha^n+3\cdot 2^n+\beta^n=4c^n.$$
+
+From here we consider two cases: (i) $n=2$ and (ii) $n>2$.
+
+(i) If $n=2$ then (1) reduces to $$(2)\text{ }\text{ }\text{ }2\alpha^2+3\beta^2=c^2$$ after dividing by 4 on both sides. We see that $2\alpha^2\equiv c^2\mod 3$; since $\{0,1\}$ are the quadratic residues mod 3, it follows that $\alpha=3A$ and $c=3C$ for some $A,B$. Substituting this into (2), we get \begin{align} 18A^2+3\beta^2=9C^2.\end{align} Rearranging to $3\beta^2=9(C^2-2A^2)$ shows that $\beta=3B$ for some $B$. Substituting this into (3) gives $$18A^2+27B^2=9C^2,$$ which reduces to $$2A^2+3B^2=C^2$$ after dividing by 9 on both sides. Thus, if $(\alpha,\beta,c)$ is a solution to (2) then so is $(\alpha/3,\beta/3,c/3)$, and we conclude that no solution exists by infinite descent.
+
+
+(ii) If $n>2$ then $2^n>4$ and we must have that $c=2\gamma$ for some $\gamma\in \ZZ^+$; substituting into (1) gives $$2^{n+1}\alpha^n+3\cdot2^n\beta^n=4\cdot 2^n\gamma^n.$$ After dividing by $2^n$ on both sides, we get that $2\alpha^n+3\beta^n=4\gamma^n$. Thus, if $(a,b,c)$ solves the equation from the problem statement then so does $(a/3,b/3,c/3),$ and we conclude that no solution exists by infinite descent.
+
