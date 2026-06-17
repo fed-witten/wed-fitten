@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-06-16">
 
-<title>mathslop dot org – mathslop</title>
+<title>Problem A1, 2024 Putnam Mathematical Competition – mathslop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +27,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,8 +72,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -82,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">mathslop</span>
     </a>
   </div>
@@ -93,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -107,21 +137,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#daily-math" id="toc-daily-math" class="nav-link active" data-scroll-target="#daily-math">Daily Math</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">mathslop dot org</h1>
+<h1 class="title">Problem A1, 2024 Putnam Mathematical Competition</h1>
 </div>
 
 
@@ -129,6 +153,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 16, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -138,18 +168,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Goal is to write some math every day. I make no promise on quality, but ideally these get better over time.</p>
-<section id="daily-math" class="level2">
-<h2 class="anchored" data-anchor-id="daily-math">Daily Math</h2>
-<ul>
-<li><a href="./posts/june16.html">6/16: Something</a></li>
-<li><a href="./posts/june15.html">6/15: Problem B1 from the 2025 Putnam</a></li>
-<li><a href="./posts/june14.html">6/14: Problem B2 from the 2022 Putnam</a></li>
-<li><a href="./posts/june13.html">6/13: Problem B3 from the 2022 Putnam</a></li>
-</ul>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Pic}{\text{Pic}}
+\newcommand{\Div}{\text{Div}}
+\newcommand{\Princ}{\text{Princ}}
+\newcommand{\Cl}{\text{Cl}}
+\newcommand{\ord}{\text{ord}}
+\newcommand{\Jac}{\text{Jac}}
+\newcommand{\Loc}{\text{Loc}}
+\]</span></p>
+</div>
+<p>Today I am cheating and self-plagiarizing a solution to a problem I did months ago. I had started writing something about divisor class groups but it was bad; that will be the topic for tomorrow, hopefully. Either that or a first post on <span class="math inline">\(p\)</span>-adic numbers, or on sheaves, or on cohomology. Or perhaps basic complex analysis to lead into Riemann surfaces. Whatever it is, it will be more interesting.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Problem A1, 2024 Putnam Mathematical Competition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Determine all positive integers <span class="math inline">\(n\)</span> for which there exist positive integers <span class="math inline">\(a,b,c\)</span> such that <span class="math display">\[2a^n+3b^n=4c^n.\]</span></p>
+</div>
+</div>
+<p>For <span class="math inline">\(n=1\)</span> there are infinitely many solutions; one family of solutions is given by <span class="math inline">\(a=t\in \ZZ^+\)</span>, <span class="math inline">\(b=2t\)</span>, <span class="math inline">\(c=2t\)</span>.</p>
+<p>Let <span class="math inline">\(n&gt;1\)</span>. By rearranging to <span class="math display">\[3b^n=4c^n-2a^n=2(2c^n-a^n),\]</span> we see that <span class="math inline">\(b\)</span> must be even. Thus, we must have <span class="math inline">\(b=2\beta\)</span> for some <span class="math inline">\(\beta\in \ZZ^+,\)</span> and we have reduced solving the original equation to solving the equation <span class="math display">\[2a^n+3\cdot2^n\beta^n=4c^n.\]</span> Rearranging again and using that <span class="math inline">\(n&gt;1\)</span> (and therefore <span class="math inline">\(n-2\geq 0\)</span>), we find that <span class="math display">\[2a^n=4(2c^n-3\cdot2^{n-2}\beta^n),\]</span> so we conclude that <span class="math inline">\(a\)</span> is also even. Writing <span class="math inline">\(a=2\alpha\)</span>, our equation becomes <span class="math display">\[(1)\text{ }\text{ }\text{ }2^{n+1}\alpha^n+3\cdot 2^n+\beta^n=4c^n.\]</span></p>
+<p>From here we consider two cases: (i) <span class="math inline">\(n=2\)</span> and (ii) <span class="math inline">\(n&gt;2\)</span>.</p>
+<ol type="i">
+<li><p>If <span class="math inline">\(n=2\)</span> then (1) reduces to <span class="math display">\[(2)\text{ }\text{ }\text{ }2\alpha^2+3\beta^2=c^2\]</span> after dividing by 4 on both sides. We see that <span class="math inline">\(2\alpha^2\equiv c^2\mod 3\)</span>; since <span class="math inline">\(\{0,1\}\)</span> are the quadratic residues mod 3, it follows that <span class="math inline">\(\alpha=3A\)</span> and <span class="math inline">\(c=3C\)</span> for some <span class="math inline">\(A,B\)</span>. Substituting this into (2), we get <span class="math display">\[\begin{align} 18A^2+3\beta^2=9C^2.\end{align}\]</span> Rearranging to <span class="math inline">\(3\beta^2=9(C^2-2A^2)\)</span> shows that <span class="math inline">\(\beta=3B\)</span> for some <span class="math inline">\(B\)</span>. Substituting this into (3) gives <span class="math display">\[18A^2+27B^2=9C^2,\]</span> which reduces to <span class="math display">\[2A^2+3B^2=C^2\]</span> after dividing by 9 on both sides. Thus, if <span class="math inline">\((\alpha,\beta,c)\)</span> is a solution to (2) then so is <span class="math inline">\((\alpha/3,\beta/3,c/3)\)</span>, and we conclude that no solution exists by infinite descent.</p></li>
+<li><p>If <span class="math inline">\(n&gt;2\)</span> then <span class="math inline">\(2^n&gt;4\)</span> and we must have that <span class="math inline">\(c=2\gamma\)</span> for some <span class="math inline">\(\gamma\in \ZZ^+\)</span>; substituting into (1) gives <span class="math display">\[2^{n+1}\alpha^n+3\cdot2^n\beta^n=4\cdot 2^n\gamma^n.\]</span> After dividing by <span class="math inline">\(2^n\)</span> on both sides, we get that <span class="math inline">\(2\alpha^n+3\beta^n=4\gamma^n\)</span>. Thus, if <span class="math inline">\((a,b,c)\)</span> solves the equation from the problem statement then so does <span class="math inline">\((a/3,b/3,c/3),\)</span> and we conclude that no solution exists by infinite descent.</p></li>
+</ol>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
