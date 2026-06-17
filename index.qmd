@@ -6,7 +6,7 @@ Goal is to write some math every day. I make no promise on quality, but ideally 
 
 ## Daily Math
 
-- [6/16: Something](posts/june16.qmd)
+- [6/16: Problem A1 from the 2024 Putnam](posts/june16.qmd)
 - [6/15: Problem B1 from the 2025 Putnam](posts/june15.qmd)
 - [6/14: Problem B2 from the 2022 Putnam](posts/june14.qmd)
 - [6/13: Problem B3 from the 2022 Putnam](posts/june13.qmd)
