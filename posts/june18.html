@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-06-18">
 
-<title>mathslop dot org – mathslop</title>
+<title>An Elementary Number Theory Problem (Cont.) – mathslop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +27,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,8 +72,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -82,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">mathslop</span>
     </a>
   </div>
@@ -93,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -112,7 +142,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#daily-math" id="toc-daily-math" class="nav-link active" data-scroll-target="#daily-math">Daily Math</a></li>
+  <li><a href="#case-1" id="toc-case-1" class="nav-link active" data-scroll-target="#case-1">Case 1</a>
+  <ul class="collapse">
+  <li><a href="#n2" id="toc-n2" class="nav-link" data-scroll-target="#n2"><span class="math inline">\(n=2\)</span></a></li>
+  <li><a href="#n3" id="toc-n3" class="nav-link" data-scroll-target="#n3"><span class="math inline">\(n=3\)</span></a></li>
+  <li><a href="#we-are-done" id="toc-we-are-done" class="nav-link" data-scroll-target="#we-are-done">We are done!</a></li>
+  </ul></li>
+  <li><a href="#case-2" id="toc-case-2" class="nav-link" data-scroll-target="#case-2">Case 2</a>
+  <ul class="collapse">
+  <li><a href="#initial-thoughts" id="toc-initial-thoughts" class="nav-link" data-scroll-target="#initial-thoughts">Initial thoughts</a></li>
+  <li><a href="#remaining-question-special-case-of-case-2" id="toc-remaining-question-special-case-of-case-2" class="nav-link" data-scroll-target="#remaining-question-special-case-of-case-2">Remaining question (special case of Case 2)</a></li>
+  </ul></li>
+  <li><a href="#appendix-case-2-n1" id="toc-appendix-case-2-n1" class="nav-link" data-scroll-target="#appendix-case-2-n1">Appendix: Case 2, <span class="math inline">\(n=1\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -121,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">mathslop dot org</h1>
+<h1 class="title">An Elementary Number Theory Problem (Cont.)</h1>
 </div>
 
 
@@ -129,6 +170,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 18, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -138,17 +185,82 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Goal is to write some math every day. I make no promise on quality, but ideally these get better over time.</p>
-<section id="daily-math" class="level2">
-<h2 class="anchored" data-anchor-id="daily-math">Daily Math</h2>
-<ul>
-<li><a href="./posts/june18.html">6/18: An Elementary Number Theory Problem (Cont.)</a></li>
-<li><a href="./posts/june17.html">6/17: An Elementary Number Theory Problem</a></li>
-<li><a href="./posts/june16.html">6/16: Problem A1 from the 2024 Putnam</a></li>
-<li><a href="./posts/june15.html">6/15: Problem B1 from the 2025 Putnam</a></li>
-<li><a href="./posts/june14.html">6/14: Problem B2 from the 2022 Putnam</a></li>
-<li><a href="./posts/june13.html">6/13: Problem B3 from the 2022 Putnam</a></li>
-</ul>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+\newcommand{\SL}{\text{SL}}
+\]</span></p>
+</div>
+<p>We continue where we left off yesterday.</p>
+<section id="case-1" class="level2">
+<h2 class="anchored" data-anchor-id="case-1">Case 1</h2>
+<p>Let <span class="math inline">\(n\in \ZZ^+\)</span>. Can every nonnegative integer be written in the form <span class="math inline">\(x^2+y^2+nz^2\)</span> for some integers <span class="math inline">\(x,y,z\)</span>?</p>
+<p>We showed that this is false when <span class="math inline">\(n=1\)</span>; the issue is that <span class="math inline">\(\{0,1,4\}\)</span> are the only squares mod <span class="math inline">\(8\)</span>, so no element of the residue class <span class="math inline">\(7\)</span> mod <span class="math inline">\(8\)</span> can be written as a sum of three squares.</p>
+<section id="n2" class="level3">
+<h3 class="anchored" data-anchor-id="n2"><span class="math inline">\(n=2\)</span></h3>
+<p>It is easily checked that we can still get <span class="math inline">\(0-6\)</span>, and we also get <span class="math inline">\(7\)</span>: <span class="math display">\[7=2^2+1^2+2\cdot 1^2.\]</span> We also get 8-13:</p>
+<p><span class="math display">\[
+\begin{aligned}
+8&amp;=2^2+2^2+2\cdot 0^2;\text{ }9=3^2+0^2+2\cdot 0^2;\text{ }10=3^2+1^2+2\cdot 0^2; \\
+11&amp;=3^2+0^2+2\cdot 1^2;\text{ }12=3^2+1^2+2\cdot 1^2; 13=3^2+2^2+2\cdot 0^2.
+\end{aligned}
+\]</span></p>
+<p>It seems that we don’t get 14. To show this, note that since <span class="math inline">\(\{0,1,4,9\}\)</span> are the squares mod <span class="math inline">\(16\)</span> (which we determined yesterday), we have <span class="math display">\[x^2\mod 16,y^2\mod 16\in \{0,1,4,9\},\text{ }\text{ } 2z^2\mod 16\in \{0,2,8\}.\]</span> This implies <span class="math display">\[x^2+y^2\mod 16\in \{0,1,2,4,5,8,10,13\}\]</span> and therefore (by a mildly tedious exhaustive check) <span class="math display">\[x^2+y^2+2z^2\mod 16\in \{0,1,2,3,4,5,6,7,8,9,10,11,12,13,15\}.\]</span> Thus, no member of the residue class <span class="math inline">\(14\)</span> mod <span class="math inline">\(16\)</span> can be written in the form <span class="math inline">\(x^2+y^2+2z^2\)</span>.</p>
+<p>Since we were working mod <span class="math inline">\(16\)</span> throughout this calculation, this shows that no member of the class <span class="math inline">\(14\)</span> mod <span class="math inline">\(16\)</span> can be written in the form <span class="math inline">\(x^2+y^2+nz^2\)</span> whenever <span class="math inline">\(n\equiv 2\mod 16\)</span>.</p>
+</section>
+<section id="n3" class="level3">
+<h3 class="anchored" data-anchor-id="n3"><span class="math inline">\(n=3\)</span></h3>
+<p>We easily get <span class="math inline">\(0-5\)</span>, but in this case we cannot get <span class="math inline">\(6\)</span>: If <span class="math inline">\(z=0\)</span> there is no solution as <span class="math inline">\(6\)</span> is not a sum of two squares; if <span class="math inline">\(|z|=1\)</span> there is no solution as <span class="math inline">\(x^2+y^2\in \{0,1,2,4,...\}\)</span>, which does not contain <span class="math inline">\(3\)</span>; if <span class="math inline">\(|z|\geq 2\)</span>, then <span class="math inline">\(x^2+y^2+3z^2&gt;6\)</span>.</p>
+</section>
+<section id="we-are-done" class="level3">
+<h3 class="anchored" data-anchor-id="we-are-done">We are done!</h3>
+<p>Recall that no number in the residue class <span class="math inline">\(3\)</span> mod <span class="math inline">\(4\)</span> can be written as a sum of two squares. In particular, <span class="math inline">\(3\)</span> is not a sum of two squares. Thus, whenever <span class="math inline">\(n&gt;3\)</span>, we cannot write <span class="math inline">\(3\)</span> in the form <span class="math inline">\(x^2+y^2+nz^2\)</span>: if <span class="math inline">\(z=0\)</span> then <span class="math inline">\(3=x^2+y^2\)</span> has no solutions, and if <span class="math inline">\(|z|&gt;0\)</span> then <span class="math inline">\(x^2+y^2+nz^2&gt;3.\)</span></p>
+<p>Ok, we are not really done, in the sense that there are more questions we could ask. For example, does <span class="math inline">\(n=3\)</span> also miss infinitely many integers? Do all <span class="math inline">\(n&gt;3\)</span> miss infinitely many integers? But I want to move on.</p>
+</section>
+</section>
+<section id="case-2" class="level2">
+<h2 class="anchored" data-anchor-id="case-2">Case 2</h2>
+<p>Let <span class="math inline">\(n\in \ZZ^+\)</span>. Can every nonnegative integer be written in the form <span class="math inline">\(x^2+y^2-nz^2\)</span> for some integers <span class="math inline">\(x,y,z\)</span>?</p>
+<p>Yesterday we answered this positively for <span class="math inline">\(n=5\)</span>. We did this by realizing we should define <span class="math inline">\(x,y,z\)</span> in terms of a fixed integer <span class="math inline">\(m\)</span> in such a way that degree <span class="math inline">\(2\)</span> terms cancel and we get something of the form <span class="math inline">\(2m+1\)</span> or <span class="math inline">\(2(m+1)\)</span>. Let us try to do this systematically rather than testing specific values of <span class="math inline">\(n\)</span>.</p>
+<section id="initial-thoughts" class="level3">
+<h3 class="anchored" data-anchor-id="initial-thoughts">Initial thoughts</h3>
+<p>I think the important part of our proof from last time is that <span class="math inline">\(5\)</span> is a sum of squares, and this is why we were able to cancel out the degree <span class="math inline">\(2\)</span> terms. To see what I mean, suppose that our integer <span class="math inline">\(n\)</span> can be written as <span class="math inline">\(n=a^2+b^2\)</span> for some <span class="math inline">\(a,b\in \ZZ^+\)</span>. Then (mimicking the calculations from the <span class="math inline">\(n=5\)</span> case) <span class="math display">\[(az+1)^2+(bz)^2-nz^2=(a^2+b^2-n^2)z^2+2az+1=2az+1,\]</span> and <span class="math display">\[(az-1)^2+(bz+1)^2-nz^2=(a^2+b^2-n^2)z^2+2(b-a)z+1=2((b-a)z+1).\]</span> We see that repeating that calculation will only work in general when <span class="math inline">\(n=a^2+b^2\)</span> with <span class="math inline">\(a=1\)</span> (or <span class="math inline">\(b=1\)</span>) and <span class="math inline">\(b=a+1\)</span>, i.e.&nbsp;<span class="math display">\[n=a^2+(a+1)^2=2a^2+2a+1.\]</span> Let’s see what happens when we plug in arbitrary linear functions of <span class="math inline">\(z\)</span> for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> to see if there’s any way to salvage this approach: <span class="math display">\[(az+c)^2+(bz+d)^2-nz^2=2(ac+bd)z+(c^2+d^2).\]</span></p>
+<p>So long as we can write <span class="math inline">\(n=a^2+b^2\)</span> with <span class="math inline">\(a,b\)</span> coprime, we can find <span class="math inline">\(c,d\)</span> such that <span class="math inline">\(ac+bd=1\)</span> (Bezout’s lemma). In this case, we either get every even integer from the above (if <span class="math inline">\(c^2+d^2\)</span> is even) or every odd integer (if <span class="math inline">\(c^2+d^2\)</span> is odd).</p>
+<p>I do not want to think about this any more today, so let me record the question we still have; I may or may not continue with this thread. I do kind of want to move toward more “real math.”</p>
+</section>
+<section id="remaining-question-special-case-of-case-2" class="level3">
+<h3 class="anchored" data-anchor-id="remaining-question-special-case-of-case-2">Remaining question (special case of Case 2)</h3>
+<p>When <span class="math inline">\(n=a^2+b^2\)</span> with <span class="math inline">\(a,b\)</span> coprime, can we write any integer in the form <span class="math display">\[x^2+y^2-nz^2?\]</span></p>
+</section>
+</section>
+<section id="appendix-case-2-n1" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-case-2-n1">Appendix: Case 2, <span class="math inline">\(n=1\)</span></h2>
+<p>This case follows from the arguments above, but I considered it separately and it is pretty simple and kind of nice, so I include it here.</p>
+<p>This case is asking whether every integer can be written in the form <span class="math display">\[x^2+y^2-z^2.\]</span> This is true, and it’s not so hard to see. Setting <span class="math inline">\(y=z+1\)</span>, we see that <span class="math display">\[x^2+y^2-z^2=x^2+(z^2+2z+1)-z^2=x^2+(2z+1).\]</span> Thus, it suffices to show that every integer <span class="math inline">\(m\)</span> can be written as the sum of a square integer and an odd integer. If <span class="math inline">\(m\)</span> is odd then we can write <span class="math inline">\(m=2k+1\)</span> for some <span class="math inline">\(k\in \ZZ\)</span>, hence setting <span class="math inline">\(x=0\)</span>, <span class="math inline">\(z=k\)</span> returns <span class="math inline">\(m\)</span>. If <span class="math inline">\(m\)</span> is even, write <span class="math inline">\(m=2k\)</span> for some <span class="math inline">\(k\in \ZZ\)</span> then take <span class="math inline">\(x=1\)</span>, <span class="math inline">\(z=k-1\)</span>.</p>
 
 
 </section>

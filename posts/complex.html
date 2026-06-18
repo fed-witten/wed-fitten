@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2001-06-26">
 
-<title>mathslop dot org – mathslop</title>
+<title>Complex Analysis – mathslop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +27,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,8 +72,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -82,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">mathslop</span>
     </a>
   </div>
@@ -93,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -112,7 +142,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#daily-math" id="toc-daily-math" class="nav-link active" data-scroll-target="#daily-math">Daily Math</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#the-complex-numbers" id="toc-the-complex-numbers" class="nav-link" data-scroll-target="#the-complex-numbers">2. The Complex Numbers</a>
+  <ul class="collapse">
+  <li><a href="#formal-definition" id="toc-formal-definition" class="nav-link" data-scroll-target="#formal-definition">2.1. Formal definition</a></li>
+  </ul></li>
+  <li><a href="#holomorphic-functions" id="toc-holomorphic-functions" class="nav-link" data-scroll-target="#holomorphic-functions">3. Holomorphic Functions</a>
+  <ul class="collapse">
+  <li><a href="#definition-cauchy-riemann-equations" id="toc-definition-cauchy-riemann-equations" class="nav-link" data-scroll-target="#definition-cauchy-riemann-equations">3.1. Definition, Cauchy-Riemann Equations</a></li>
+  </ul></li>
+  <li><a href="#cauchys-integral-formula-and-applications" id="toc-cauchys-integral-formula-and-applications" class="nav-link" data-scroll-target="#cauchys-integral-formula-and-applications">4. Cauchy’s Integral Formula and Applications</a></li>
   </ul>
 </nav>
     </div>
@@ -121,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">mathslop dot org</h1>
+<h1 class="title">Complex Analysis</h1>
 </div>
 
 
@@ -129,6 +168,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 26, 2001</p>
+    </div>
+  </div>
   
     
   </div>
@@ -138,17 +183,95 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Goal is to write some math every day. I make no promise on quality, but ideally these get better over time.</p>
-<section id="daily-math" class="level2">
-<h2 class="anchored" data-anchor-id="daily-math">Daily Math</h2>
-<ul>
-<li><a href="./posts/june18.html">6/18: An Elementary Number Theory Problem (Cont.)</a></li>
-<li><a href="./posts/june17.html">6/17: An Elementary Number Theory Problem</a></li>
-<li><a href="./posts/june16.html">6/16: Problem A1 from the 2024 Putnam</a></li>
-<li><a href="./posts/june15.html">6/15: Problem B1 from the 2025 Putnam</a></li>
-<li><a href="./posts/june14.html">6/14: Problem B2 from the 2022 Putnam</a></li>
-<li><a href="./posts/june13.html">6/13: Problem B3 from the 2022 Putnam</a></li>
-</ul>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+\]</span></p>
+</div>
+<p>The goal of this next series of posts is to give something of a guided tour through complex analysis. Some of the easier proofs will be given, while most will be sketched or given a reference.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>The main references here are [1] Stein and Shakarchi, [2] Freitag and ???. The sequence of topics mainly follows the order in [1], and all the proofs/ideas of proofs are my personal recollections of and/or explanations of their proofs (unless I indicate otherwise).</p>
+</section>
+<section id="the-complex-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="the-complex-numbers">2. The Complex Numbers</h2>
+<p>In this section we introduce the complex numbers as the set <span class="math inline">\(\RR\times \RR\)</span> with the usual componentwise addition and the multiplication rule one would expect by thinking of complex numbers as numbers of the form <span class="math inline">\(x+iy\)</span> with <span class="math inline">\(x,y\in \RR.\)</span></p>
+<p>Next, we discuss the trigonometric and exponential functions and the representation of a complex number in polar coordinates.</p>
+<p>Then we do something else and something else and…</p>
+<section id="formal-definition" class="level3">
+<h3 class="anchored" data-anchor-id="formal-definition">2.1. Formal definition</h3>
+<p>After setting up the foundations, it suffices to think of the complex numbers as being numbers of the form <span class="math inline">\(x+iy\)</span> where <span class="math inline">\(x,y\in \RR\)</span> and <span class="math inline">\(i^2=-1\)</span>, and the real numbers are the subset having imaginary part equal to <span class="math inline">\(0\)</span>. To make this rigorous, we define the complex numbers by taking the cartesian product <span class="math inline">\(\RR\times \RR\)</span> and definition addition via <span class="math display">\[(a,b)+(c,d)=(a+c,b+d)\]</span> and multiplication via <span class="math display">\[(a,b)\cdot (c,d)=(ac-bd,ad+bc).\]</span> See the very beginning of [2] for more details.</p>
+</section>
+</section>
+<section id="holomorphic-functions" class="level2">
+<h2 class="anchored" data-anchor-id="holomorphic-functions">3. Holomorphic Functions</h2>
+<p>In this section we define the notion of complex differentiability. We show that complex differentiability is a far more rigid constraint than that of real differentiability; one important example of this idea is the <em>Cauchy-Riemann equations</em>.</p>
+<section id="definition-cauchy-riemann-equations" class="level3">
+<h3 class="anchored" data-anchor-id="definition-cauchy-riemann-equations">3.1. Definition, Cauchy-Riemann Equations</h3>
+<p><strong>Definition 3.1.1.</strong> Let <span class="math inline">\(\Omega\)</span> be an open subset of <span class="math inline">\(\CC\)</span>. We say that a function <span class="math inline">\(f:\Omega\to \CC\)</span> is <em>differentiable/holomorphic at</em> <span class="math inline">\(x\in \Omega\)</span> if the limit <span class="math display">\[\lim_{h\to 0} \frac{f(z+h)-f(z)}{h}\]</span> exists. When this is the case, we let <span class="math inline">\(f'(z)\)</span> denote the value of this limit. If <span class="math inline">\(f\)</span> is holomorphic at every point <span class="math inline">\(x\in \Omega\)</span> we say that <span class="math inline">\(f\)</span> is <em>holomorphic on</em> <span class="math inline">\(\Omega\)</span>. We write <span class="math inline">\(\cO(\Omega)\)</span> for the set of holomorphic functions on <span class="math inline">\(\Omega.\)</span></p>
+<p>Recalling that <span class="math inline">\(\CC=(\RR\times \RR,+,\cdot)\)</span>, we can write <span class="math inline">\(f:\Omega\to \CC\)</span> as <span class="math display">\[f(x,y)=u(x,y)+iv(x,y)\]</span> for some <span class="math inline">\(u,v:\Omega\to \RR\)</span> for all <span class="math inline">\((x,y)\in \Omega\)</span>.</p>
+<p><strong>Proposition 3.1.2 (Cauchy-Riemann Equations).</strong> If <span class="math inline">\(f=u+iv\in \cO(\Omega)\)</span>, then <span class="math display">\[\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\text{ }\text{ }\text{ }\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.\]</span></p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The idea is to evaluate the limit defining holomorphicity twice, once in the direction parallel to the real axis, and once in the direction parallel to the imaginary axis.</p>
+<p>Let <span class="math inline">\(z\in \Omega\)</span>. In the limits below, assume <span class="math inline">\(h\in \RR\)</span>. <span class="math display">\[
+\begin{aligned}
+\lim_{h\to 0} \frac{f(z+h)-f(z)}{h} &amp;= \lim_{h\to 0}\frac{[u(x+h,y)+iv(x+h,y)]-[u(x,y)+iv(x,y)]}{h} \\
+&amp;= \lim_{h\to 0}\frac{u(x+h,y)-u(x,y)}{h}+i\frac{v(x+h,y)-v(x,y)}{h} \\
+&amp;= u_x(x,y)+iv_x(x,y);
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{h\to 0} \frac{f(z+h)-f(z)}{ih} &amp;= \lim_{h\to 0}\frac{[u(x,y+h)+iv(x,y+h)]-[u(x,y)+iv(x,y)]}{ih} \\
+&amp;= \lim_{h\to 0}-i\frac{u(x,y+h)-u(x,y)}{h}+\frac{v(x,y+h)-v(x,y)}{h} \\
+&amp;= v_y(x,y)-iu_y(x,y).
+\end{aligned}
+\]</span></p>
+<p>Since <span class="math inline">\(z\in \Omega\)</span> and <span class="math inline">\(f\in \cO(\Omega)\)</span>, the two limits above are equal. Comparing real and imaginary parts gives the desired result. <span style="float: right;"><span class="math inline">\(\square\)</span></span></p>
+</div>
+</div>
+</div>
+<p>A</p>
+</section>
+</section>
+<section id="cauchys-integral-formula-and-applications" class="level2">
+<h2 class="anchored" data-anchor-id="cauchys-integral-formula-and-applications">4. Cauchy’s Integral Formula and Applications</h2>
+<p>In this section we discuss integration of holomorphic functions along paths in the complex plane.</p>
 
 
 </section>
