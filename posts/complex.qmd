@@ -1,0 +1,96 @@
+---
+title: "Complex Analysis"
+date: 06/??/26
+---
+
+::: {.hidden}
+$$
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+$$
+:::
+
+The goal of this next series of posts is to give something of a guided tour through complex analysis. Some of the easier proofs will be given, while most will be sketched or given a reference.
+
+## 1. Introduction
+
+The main references here are [1] Stein and Shakarchi, [2] Freitag and ???. The sequence of topics mainly follows the order in [1], and all the proofs/ideas of proofs are my personal recollections of and/or explanations of their proofs (unless I indicate otherwise).
+
+## 2. The Complex Numbers
+
+In this section we introduce the complex numbers as the set $\RR\times \RR$ with the usual componentwise addition and the multiplication rule one would expect by thinking of complex numbers as numbers of the form $x+iy$ with $x,y\in \RR.$
+
+Next, we discuss the trigonometric and exponential functions and the representation of a complex number in polar coordinates.
+
+Then we do something else and something else and...
+
+### 2.1. Formal definition
+
+After setting up the foundations, it suffices to think of the complex numbers as being numbers of the form $x+iy$ where $x,y\in \RR$ and $i^2=-1$, and the real numbers are the subset having imaginary part equal to $0$. To make this rigorous, we define the complex numbers by taking the cartesian product $\RR\times \RR$ and definition addition via $$(a,b)+(c,d)=(a+c,b+d)$$ and multiplication via $$(a,b)\cdot (c,d)=(ac-bd,ad+bc).$$ See the very beginning of [2] for more details.
+
+## 3. Holomorphic Functions
+
+In this section we define the notion of complex differentiability. We show that complex differentiability is a far more rigid constraint than that of real differentiability; one important example of this idea is the *Cauchy-Riemann equations*. 
+
+### 3.1. Definition, Cauchy-Riemann Equations
+
+**Definition 3.1.1.** Let $\Omega$ be an open subset of $\CC$. We say that a function $f:\Omega\to \CC$ is *differentiable/holomorphic at* $x\in \Omega$ if the limit $$\lim_{h\to 0} \frac{f(z+h)-f(z)}{h}$$ exists. When this is the case, we let $f'(z)$ denote the value of this limit. If $f$ is holomorphic at every point $x\in \Omega$ we say that $f$ is *holomorphic on* $\Omega$. We write $\cO(\Omega)$ for the set of holomorphic functions on $\Omega.$
+
+Recalling that $\CC=(\RR\times \RR,+,\cdot)$, we can write $f:\Omega\to \CC$ as $$f(x,y)=u(x,y)+iv(x,y)$$ for some $u,v:\Omega\to \RR$ for all $(x,y)\in \Omega$.
+
+**Proposition 3.1.2 (Cauchy-Riemann Equations).** If $f=u+iv\in \cO(\Omega)$, then $$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\text{ }\text{ }\text{ }\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.$$
+
+::: {.callout-note collapse="true" icon=false appearance="simple"}
+## Proof.
+
+The idea is to evaluate the limit defining holomorphicity twice, once in the direction parallel to the real axis, and once in the direction parallel to the imaginary axis.
+
+Let $z\in \Omega$. In the limits below, assume $h\in \RR$.
+$$
+\begin{aligned}
+\lim_{h\to 0} \frac{f(z+h)-f(z)}{h} &= \lim_{h\to 0}\frac{[u(x+h,y)+iv(x+h,y)]-[u(x,y)+iv(x,y)]}{h} \\
+&= \lim_{h\to 0}\frac{u(x+h,y)-u(x,y)}{h}+i\frac{v(x+h,y)-v(x,y)}{h} \\
+&= u_x(x,y)+iv_x(x,y);
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\lim_{h\to 0} \frac{f(z+h)-f(z)}{ih} &= \lim_{h\to 0}\frac{[u(x,y+h)+iv(x,y+h)]-[u(x,y)+iv(x,y)]}{ih} \\
+&= \lim_{h\to 0}-i\frac{u(x,y+h)-u(x,y)}{h}+\frac{v(x,y+h)-v(x,y)}{h} \\
+&= v_y(x,y)-iu_y(x,y).
+\end{aligned}
+$$
+
+Since $z\in \Omega$ and $f\in \cO(\Omega)$, the two limits above are equal. Comparing real and imaginary parts gives the desired result.
+<span style="float: right;">$\square$</span>
+:::
+
+A
+
+## 4. Cauchy's Integral Formula and Applications
+
+In this section we discuss integration of holomorphic functions along paths in the complex plane. 

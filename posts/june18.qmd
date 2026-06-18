@@ -1,0 +1,94 @@
+---
+title: "An Elementary Number Theory Problem (Cont.)"
+date: 06/18/26
+---
+
+::: {.hidden}
+$$
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+\newcommand{\SL}{\text{SL}}
+$$
+:::
+
+We continue where we left off yesterday.
+
+## Case 1
+
+Let $n\in \ZZ^+$. Can every nonnegative integer be written in the form $x^2+y^2+nz^2$ for some integers $x,y,z$?
+
+We showed that this is false when $n=1$; the issue is that $\{0,1,4\}$ are the only squares mod $8$, so no element of the residue class $7$ mod $8$ can be written as a sum of three squares.
+
+### $n=2$
+
+It is easily checked that we can still get $0-6$, and we also get $7$: $$7=2^2+1^2+2\cdot 1^2.$$ We also get 8-13:
+
+$$
+\begin{aligned}
+8&=2^2+2^2+2\cdot 0^2;\text{ }9=3^2+0^2+2\cdot 0^2;\text{ }10=3^2+1^2+2\cdot 0^2; \\
+11&=3^2+0^2+2\cdot 1^2;\text{ }12=3^2+1^2+2\cdot 1^2; 13=3^2+2^2+2\cdot 0^2.
+\end{aligned}
+$$
+
+It seems that we don't get 14. To show this, note that since $\{0,1,4,9\}$ are the squares mod $16$ (which we determined yesterday), we have $$x^2\mod 16,y^2\mod 16\in \{0,1,4,9\},\text{ }\text{ } 2z^2\mod 16\in \{0,2,8\}.$$ This implies $$x^2+y^2\mod 16\in \{0,1,2,4,5,8,10,13\}$$ and therefore (by a mildly tedious exhaustive check) $$x^2+y^2+2z^2\mod 16\in \{0,1,2,3,4,5,6,7,8,9,10,11,12,13,15\}.$$ Thus, no member of the residue class $14$ mod $16$ can be written in the form $x^2+y^2+2z^2$. 
+
+Since we were working mod $16$ throughout this calculation, this shows that no member of the class $14$ mod $16$ can be written in the form $x^2+y^2+nz^2$ whenever $n\equiv 2\mod 16$.
+
+
+### $n=3$
+
+We easily get $0-5$, but in this case we cannot get $6$: If $z=0$ there is no solution as $6$ is not a sum of two squares; if $|z|=1$ there is no solution as $x^2+y^2\in \{0,1,2,4,...\}$, which does not contain $3$; if $|z|\geq 2$, then $x^2+y^2+3z^2>6$.
+
+### We are done!
+
+Recall that no number in the residue class $3$ mod $4$ can be written as a sum of two squares. In particular, $3$ is not a sum of two squares. Thus, whenever $n>3$, we cannot write $3$ in the form $x^2+y^2+nz^2$: if $z=0$ then $3=x^2+y^2$ has no solutions, and if $|z|>0$ then $x^2+y^2+nz^2>3.$
+
+Ok, we are not really done, in the sense that there are more questions we could ask. For example, does $n=3$ also miss infinitely many integers? Do all $n>3$ miss infinitely many integers? But I want to move on.
+
+## Case 2
+
+Let $n\in \ZZ^+$. Can every nonnegative integer be written in the form $x^2+y^2-nz^2$ for some integers $x,y,z$?
+
+Yesterday we answered this positively for $n=5$. We did this by realizing we should define $x,y,z$ in terms of a fixed integer $m$ in such a way that degree $2$ terms cancel and we get something of the form $2m+1$ or $2(m+1)$. Let us try to do this systematically rather than testing specific values of $n$.
+
+### Initial thoughts
+
+I think the important part of our proof from last time is that $5$ is a sum of squares, and this is why we were able to cancel out the degree $2$ terms. To see what I mean, suppose that our integer $n$ can be written as $n=a^2+b^2$ for some $a,b\in \ZZ^+$. Then (mimicking the calculations from the $n=5$ case) $$(az+1)^2+(bz)^2-nz^2=(a^2+b^2-n^2)z^2+2az+1=2az+1,$$ and $$(az-1)^2+(bz+1)^2-nz^2=(a^2+b^2-n^2)z^2+2(b-a)z+1=2((b-a)z+1).$$ We see that repeating that calculation will only work in general when $n=a^2+b^2$ with $a=1$ (or $b=1$) and $b=a+1$, i.e. $$n=a^2+(a+1)^2=2a^2+2a+1.$$ Let's see what happens when we plug in arbitrary linear functions of $z$ for $x$ and $y$ to see if there's any way to salvage this approach: $$(az+c)^2+(bz+d)^2-nz^2=2(ac+bd)z+(c^2+d^2).$$
+
+So long as we can write $n=a^2+b^2$ with $a,b$ coprime, we can find $c,d$ such that $ac+bd=1$ (Bezout's lemma). In this case, we either get every even integer from the above (if $c^2+d^2$ is even) or every odd integer (if $c^2+d^2$ is odd).
+
+I do not want to think about this any more today, so let me record the question we still have; I may or may not continue with this thread. I do kind of want to move toward more "real math."
+
+### Remaining question (special case of Case 2)
+
+When $n=a^2+b^2$ with $a,b$ coprime, can we write any integer in the form $$x^2+y^2-nz^2?$$
+
+## Appendix: Case 2, $n=1$
+
+This case follows from the arguments above, but I considered it separately and it is pretty simple and kind of nice, so I include it here.
+
+This case is asking whether every integer can be written in the form $$x^2+y^2-z^2.$$ This is true, and it's not so hard to see. Setting $y=z+1$, we see that $$x^2+y^2-z^2=x^2+(z^2+2z+1)-z^2=x^2+(2z+1).$$ Thus, it suffices to show that every integer $m$ can be written as the sum of a square integer and an odd integer. If $m$ is odd then we can write $m=2k+1$ for some $k\in \ZZ$, hence setting $x=0$, $z=k$ returns $m$. If $m$ is even, write $m=2k$ for some $k\in \ZZ$ then take $x=1$, $z=k-1$.
+

@@ -1,0 +1,9 @@
+---
+title: "Training Wheels for Mathematical Intuition"
+date: 06/18/26
+---
+
+David Bessis said that to truly understand something in mathematics is to find it obvious. I believe this is correct, and that this is the standard one should set for themselves.
+
+Notice that finding something obvious is a subjective state. It is not the same thing as having written a proof of something in the past, being able to recite an explanation, or knowing which book to look in. This does not mean that reading books, carefully thinking about other people's proofs and explanations, etc is not part of the process of understanding. It just means your work is not done until you own that piece of mathematics in the same way that you own basic arithmetic, or the ability to walk. This is a high standard that will take a lot of effort to meet, so you should get used to the feeling of not understanding.
+
