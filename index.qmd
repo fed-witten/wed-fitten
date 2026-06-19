@@ -6,6 +6,7 @@ Goal is to write some math every day. I make no promise on quality, but ideally 
 
 ## Daily Math
 
+- [6/19-6/??: The Prime Spectrum of a Ring](posts/june19.qmd)
 - [6/18: An Elementary Number Theory Problem (Cont.)](posts/june18.qmd)
 - [6/17: An Elementary Number Theory Problem](posts/june17.qmd)
 - [6/16: Problem A1 from the 2024 Putnam](posts/june16.qmd)
