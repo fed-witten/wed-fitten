@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-07-02">
 
-<title>mathslop dot org – mathslop</title>
+<title>Hilbert’s Nullstellensatz: Integral Extensions Day 1 – mathslop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +27,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,7 +102,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -111,7 +112,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">mathslop</span>
     </a>
   </div>
@@ -122,7 +123,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -141,7 +142,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#daily-math" id="toc-daily-math" class="nav-link active" data-scroll-target="#daily-math">Daily Math</a></li>
+  <li><a href="#goal-of-this-sequence-of-posts" id="toc-goal-of-this-sequence-of-posts" class="nav-link active" data-scroll-target="#goal-of-this-sequence-of-posts">Goal of this sequence of posts</a></li>
+  <li><a href="#integral-extensions" id="toc-integral-extensions" class="nav-link" data-scroll-target="#integral-extensions">Integral extensions</a>
+  <ul class="collapse">
+  <li><a href="#definition-and-examples" id="toc-definition-and-examples" class="nav-link" data-scroll-target="#definition-and-examples">Definition and examples</a></li>
+  <li><a href="#an-easy-lemma" id="toc-an-easy-lemma" class="nav-link" data-scroll-target="#an-easy-lemma">An easy lemma</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -150,7 +156,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">mathslop dot org</h1>
+<h1 class="title">Hilbert’s Nullstellensatz: Integral Extensions Day 1</h1>
 </div>
 
 
@@ -158,6 +164,12 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 2, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -198,24 +210,70 @@ window.Quarto = {
 \newcommand{\Spa}{\text{Spa}}
 \newcommand{\Spf}{\text{Spf}}
 \newcommand{\SL}{\text{SL}}
-\newcommand{\GL}{\text{GL}}
+\newcommand{\Frac}{\text{Frac}}
 \]</span></p>
 </div>
-<p>Goal is to write some math every day. I make no promise on quality, but ideally these get better over time.</p>
-<section id="daily-math" class="level2">
-<h2 class="anchored" data-anchor-id="daily-math">Daily Math</h2>
-<ul>
-<li><a href="./posts/july2.html">7/2 Hilbert’s Nullstellensatz: Integral Extensions Day 1</a></li>
-<li><a href="./posts/june19.html">6/19-6/??: The Prime Spectrum of a Ring</a></li>
-<li><a href="./posts/june18.html">6/18: An Elementary Number Theory Problem (Cont.)</a></li>
-<li><a href="./posts/june17.html">6/17: An Elementary Number Theory Problem</a></li>
-<li><a href="./posts/june16.html">6/16: Problem A1 from the 2024 Putnam</a></li>
-<li><a href="./posts/june15.html">6/15: Problem B1 from the 2025 Putnam</a></li>
-<li><a href="./posts/june14.html">6/14: Problem B2 from the 2022 Putnam</a></li>
-<li><a href="./posts/june13.html">6/13: Problem B3 from the 2022 Putnam</a></li>
-</ul>
+<p>Any reader who believes I have missed even one day of daily math posts is hallucinating a horrible nightmare world completely disconnected from reality and should work on waking up as soon as possible.</p>
+<p>In a hypothetical world where I had missed some posts, I would address that problem by breaking posts up into smaller ones to ensure I did something everyday. To avoid the problems that exist in said hypothetical world, I will implement this solution in the actual world to ensure that I continue my streak of daily posts.</p>
+<p>All rings are commutative with 1.</p>
+<section id="goal-of-this-sequence-of-posts" class="level2">
+<h2 class="anchored" data-anchor-id="goal-of-this-sequence-of-posts">Goal of this sequence of posts</h2>
+<p>We are going to prove Hilbert’s Nullstellensatz without the assumption that the base field <span class="math inline">\(k\)</span> is algebraically closed. I will more or less follow the presentation from Chapter 5 of Daniel Coray’s <a href="https://link.springer.com/book/10.1007/978-3-030-43781-7"><em>Notes on Geometry and Arithmetic</em></a>.</p>
+<p>It would be difficult to overstate the importance of Hilbert’s Nullstellensatz and its consequences. In Coray’s words,</p>
+<blockquote class="blockquote">
+<p>The most important consequence is <em>the unity of algebra and geometry</em>.</p>
+</blockquote>
+<p>More precisely, we will (eventually) show that there is an equivalence of categories between the category of affine varieties over <span class="math inline">\(k\)</span> and the category of reduced <span class="math inline">\(k\)</span>-algebras of finite type.</p>
+</section>
+<section id="integral-extensions" class="level2">
+<h2 class="anchored" data-anchor-id="integral-extensions">Integral extensions</h2>
+<section id="definition-and-examples" class="level3">
+<h3 class="anchored" data-anchor-id="definition-and-examples">Definition and examples</h3>
+<p><strong>Definition 1.</strong> Let <span class="math inline">\(R,S\)</span> be rings and suppose that <span class="math inline">\(R\subset S\)</span>. An element <span class="math inline">\(s\in S\)</span> is said to be <em>integral over</em> <span class="math inline">\(R\)</span> if there exists a monic polynomial <span class="math display">\[f=a_0+a_1x+...+a_{n-1}x^{n-1}+x^n\in R[x]\]</span> such that <span class="math inline">\(f(s)=0.\)</span> We say that <span class="math inline">\(S\)</span> is <em>integral over</em> <span class="math inline">\(R\)</span>, or that <span class="math inline">\(S\)</span> is an <em>integral extension</em> of <span class="math inline">\(R\)</span> if every element <span class="math inline">\(s\in S\)</span> is integral over <span class="math inline">\(R\)</span>. If <span class="math inline">\(R\)</span> is an integral domain and <span class="math inline">\(S\)</span> is its fraction field, we say that <span class="math inline">\(R\)</span> is <em>integrally closed</em> if every element <span class="math inline">\(s\in S\)</span> that is integral over <span class="math inline">\(R\)</span> belongs to <span class="math inline">\(R\)</span>.</p>
+<p>One can easily check that <span class="math inline">\(\ZZ\)</span> is integrally closed in <span class="math inline">\(\QQ\)</span>. Thus, the notion of a ring integrally closed inside its fraction field generalizes the way <span class="math inline">\(\ZZ\)</span> sits inside of <span class="math inline">\(\QQ\)</span>.</p>
+<p><strong>Example 1.</strong> <span class="math inline">\(\ZZ\subset \ZZ[i]\)</span> is an integral extension of rings. More generally, for any squarefree integer <span class="math inline">\(d\neq 0\)</span>, the ring <span class="math inline">\(\ZZ[\sqrt{d}]\)</span> is integral over <span class="math inline">\(\ZZ\)</span> when <span class="math inline">\(d\equiv 2,3\mod 4\)</span>, and <span class="math inline">\(\ZZ[(1+\sqrt{d})/2]\)</span> is integral over <span class="math inline">\(\ZZ\)</span> when <span class="math inline">\(d\equiv 1\mod 4\)</span>. These are the <em>quadratic integer rings</em>. Each quadratic integer ring is integrally closed with fraction field <span class="math inline">\(\QQ(\sqrt{d}).\)</span></p>
+<p><strong>Example 2.</strong> The following example is drawn from Hartshorne Exercise I.3.17.</p>
+<p>Whether a ring is integrally closed carries geometric meaning. Let <span class="math inline">\(Y=Z(y^2-x^3)\)</span> be the <em>cuspidal cubic curve</em>, pictured below.</p>
+<p>A variety <span class="math inline">\(Y\)</span> is said to be <em>normal</em> if for all points <span class="math inline">\(P\in Y\)</span>, the local ring <span class="math inline">\(\cO_P\)</span> is integrally closed. We will show that the cuspidal cubic is not normal by showing that the local ring of <span class="math inline">\(Y\)</span> at the cusp fails to be integrally closed.</p>
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/cuspidalcubic.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>p.22, <a href="https://link.springer.com/book/10.1007/978-3-319-18588-0"><em>Rational Points on Elliptic Curves</em></a> by Silverman and Tate</figcaption>
+</figure>
+</div>
+</div>
+<p>The coordinate ring <span class="math inline">\(A(Y)\)</span> of this curve is isomorphic to the integral domain <span class="math inline">\(R=k[t^2,t^3]\)</span> (<span class="math inline">\(R\)</span> is a domain since it is a subring of the domain <span class="math inline">\(k[t]\)</span>) via the map <span class="math inline">\(x\mapsto t^2\)</span>, <span class="math inline">\(y\mapsto t^3\)</span>. The local ring <span class="math inline">\(\cO_{P,Y}\)</span> of <span class="math inline">\(Y\)</span> at <span class="math inline">\(P=(0,0)\)</span> can be identified with the rational functions on <span class="math inline">\(Y\)</span> that are regular at <span class="math inline">\((0,0)\)</span>, which in turn we can identify with elements of the fraction field of <span class="math inline">\(R\)</span> with denominator not vanishing at <span class="math inline">\(0\in \bA_k^1\)</span>, <span class="math inline">\(k[t]=A(\bA_k^1)\)</span> (this is the local ring <span class="math inline">\(R_{(t^2,t^3)}\)</span>).</p>
+<p>The ring <span class="math inline">\(\cO_{P,Y}\)</span> is not integrally closed. First, note that <span class="math inline">\(t^3/t^2=t\in \Frac(R)\)</span>, and in fact <span class="math inline">\(\Frac{R}=k(t).\)</span> Since <span class="math inline">\(t\)</span> is a root of the monic polynomial <span class="math inline">\(X^2-t^2\in R[X]\)</span>, <span class="math inline">\(t\)</span> is integral over <span class="math inline">\(R\)</span>. However, I claim that we cannot write <span class="math inline">\(t\)</span> as a rational function <span class="math inline">\(f(t)/g(t)\)</span> with <span class="math inline">\(f,g\in k[t^2,t^3]\)</span> and <span class="math inline">\(g(t)\)</span> not vanishing at <span class="math inline">\(0\)</span>.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Justification of claim.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If we suppose that we can, then <span class="math inline">\(f(t)=tg(t)\)</span> in <span class="math inline">\(k[t]\)</span>. Since <span class="math inline">\(g(0)\neq 0\)</span>, we have <span class="math display">\[g(t)=a_0+a_1t+...+a_nt^n\]</span> for some <span class="math inline">\(a_0,a_1,...,a_n\in k,\)</span> <span class="math inline">\(a_0\neq 0.\)</span> So <span class="math display">\[f(t)=tg(t)=a_0t+a_1t^2+...+a_nt^{n+1};\]</span> this has a nonzero homogeneous degree 1 component, but <span class="math inline">\(R\)</span> has no elements of degree 1 in the natural grading.</p>
+</div>
+</div>
+</div>
+<p>Since <span class="math inline">\(t\)</span> cannot be written as an element of <span class="math inline">\(\Frac(R)\)</span> with denominator not vanishing at <span class="math inline">\(0\)</span>, i.e.&nbsp;<span class="math inline">\(t\notin R_(t^2,t^3)\)</span>, we see that <span class="math inline">\(R_{(t^2,t^3)}\)</span> is not integrally closed. Hence the local ring <span class="math inline">\(\cO_{P,Y}\)</span> is not integrally closed.</p>
+</section>
+<section id="an-easy-lemma" class="level3">
+<h3 class="anchored" data-anchor-id="an-easy-lemma">An easy lemma</h3>
+<p><strong>Lemma 1.</strong> If a ring <span class="math inline">\(R\)</span> is a unique factorization domain, then <span class="math inline">\(R\)</span> is integrally closed.</p>
+<p>This is more or less exactly the proof in Coray, Lemma 5.1.4.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(K\)</span> be the fraction field of <span class="math inline">\(R\)</span> and let <span class="math inline">\(x\in K\)</span> be integral over <span class="math inline">\(R\)</span>. Then we have <span class="math display">\[a_0+a_1x+...+a_{n-1}x^{n-1}+x^n=0\]</span> for some <span class="math inline">\(a_0,a_1,...,a_{n-1}\in R\)</span>. Since <span class="math inline">\(R\)</span> is a unique factorization domain, there exist unique relatively prime elements <span class="math inline">\(a,b\in R\)</span> such that <span class="math inline">\(x=a/b\)</span>, and the equation above becomes <span class="math display">\[a_0+a_1\frac{a}{b}+...+a_{n-1}\frac{a^{n-1}}{b^{n-1}}+\frac{a^n}{b^n}=0.\]</span> Multiplying by <span class="math inline">\(b^n\)</span> on both sides gives <span class="math display">\[a_0b^n+a_1ab^{n-1}+...+a_{n-1}a^{n-1}b+a^n=0,\]</span> and therefore <span class="math display">\[a^n=-(a_0b^n+...+a_{n-1}b^{n-1});\]</span> in particular, we conclude that <span class="math inline">\(b|a^n\)</span>. This implies that any irreducible factor of <span class="math inline">\(b\)</span> divides <span class="math inline">\(a\)</span>. Since <span class="math inline">\(a,b\in R\)</span> are relatively prime, <span class="math inline">\(b\)</span> must be a unit of <span class="math inline">\(R\)</span>, and therefore <span class="math inline">\(a/b=ab^{-1}\in R\)</span>.</p>
+<p><span style="float: right;"><span class="math inline">\(\square\)</span></span><br>
+</p>
+<p>In the next post we will prove some general facts about integral extensions, and discuss some applications in basic algebraic number theory and algebraic geometry.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
