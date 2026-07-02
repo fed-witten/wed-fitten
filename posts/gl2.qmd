@@ -1,5 +1,5 @@
 ---
-title: "The Prime Spectrum of a Ring"
+title: "Reading: *The Local Langlands Conjecture for $GL(2)$*"
 date: 06/19/26
 ---
 
@@ -34,5 +34,7 @@ $$
 \newcommand{\Spa}{\text{Spa}}
 \newcommand{\Spf}{\text{Spf}}
 \newcommand{\SL}{\text{SL}}
+\newcommand{\GL}{\text{GL}}
 $$
 :::
+

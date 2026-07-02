@@ -43,6 +43,12 @@ $$
 6/19: Added "Definition," "Some intuition/motivation," "Lemma 10.17.2," and "Some Problems" sections. Gave the definition of spectrum, gave some (incomplete) explanation of the topological space we will get and stated that principal opens correspond to localizations at elements. Gave a "peek towards affine schemes" that (incompletely) highlights the role of the principal opens for defining the structure sheaf of an affine scheme. Gave the spectra of $k[x]$ and $\ZZ$ as examples; would like to add explanations of how the principal opens here correspond to spectra of localizations. Proved parts (1)-(3) of Lemma 10.17.2. Solved Exercise 2.23 from Altman-Kleiman; started Exercise 13.18.
 
 6/20: Added parts (4)-(6) and half of part (7) of Lemma 10.17.2. Weeeeeeeaaaaaaaak.
+
+6/21: Added one line in Exercise 13.18. My excuse is that it was Father's Day. 
+
+6/22-6/23: I did nothing and have no excuse.
+
+6/24: 
 :::
 
 This next sequence of posts will just be me (re-)working through some basic commutative algebra. I will probably spend more than one day each post. To hold myself accountable, I will put an "edit log" in the beginning detailing what progress I made each day. Thus, this page will be something of a "construction zone" until I move on to the next separate post. In particular, I will try to grind through a bunch of technical details first before making it a coherent expository post.
@@ -81,7 +87,7 @@ Then, one can simply define the structure sheaf as the sheafification of the pre
 
 For a moment, take for granted that the definition of the Zariski topology above indeed defines a topology on $\Spec(R)$; we will show this later.
 
-**Example 1.** Let $k$ be an algebraically closed field and let $R=k[x]$. Then $$\Spec(R)=\{(0)\}\cup\{(x-a):a\in k\}.$$ Since $(0)\subset \fp$ for all $\fp\in \Spec(R)$, we see that $$V((0))=R;$$ this means that in the Zariski topology, the closure of $(0)$ is equal to the whole space $\Spec(R)$. We say that $(0)$ is the *generic point* of $\Spec(R)$. The reason we are justified in called $(0)$ *the* generic point is because for all $a\in k$, the prime ideal $(x-a)$ is maximal, so $$V((x-a))=\{(x-a)\}.$$ If we take an arbitrary $f\in k[x]$, then $f$ factors uniquely into a procuct of a constant and some monic linear polynomials $$f=\alpha\prod_{i=1}^n (x-a_i),\text{ }\alpha,a_i\in k$$ since $k$ is an algebraically closed field and $k[x]$ is both a PID and a UFD. Thus, $$D(f)=\{(x-\lambda):\lambda\in k\setminus\{a_1,a_2,...,a_n\}\}.$$
+**Example 1.** Let $k$ be an algebraically closed field and let $R=k[x]$. Then $$\Spec(R)=\{(0)\}\cup\{(x-a):a\in k\}.$$ Since $(0)\subset \fp$ for all $\fp\in \Spec(R)$, we see that $$V((0))=R;$$ this means that in the Zariski topology, the closure of $(0)$ is equal to the whole space $\Spec(R)$. We say that $(0)$ is the *generic point* of $\Spec(R)$. The reason we are justified in calling $(0)$ *the* generic point is because for all $a\in k$, the prime ideal $(x-a)$ is maximal, so $$V((x-a))=\{(x-a)\}.$$ If we take an arbitrary $f\in k[x]$, then $f$ factors uniquely into a procuct of a constant and some monic linear polynomials $$f=\alpha\prod_{i=1}^n (x-a_i),\text{ }\alpha,a_i\in k$$ since $k$ is an algebraically closed field and $k[x]$ is both a PID and a UFD. Thus, $$D(f)=\{(x-\lambda):\lambda\in k\setminus\{a_1,a_2,...,a_n\}\}.$$
 
 **Example 2.** $\Spec(\ZZ)=\{(0)\}\cup \{(p):p\text{ prime}\}.$ Again, $(0)$ is the unique generic point, and all the nonzero prime ideals are maximal. Given an integer $n$, $$D(n)=\{p\in \ZZ:p\text{ prime and} \gcd(p,n)=1\}.$$
 
@@ -147,7 +153,7 @@ Thus, $\fP$ is an upper bound for the chain $\{\fp_{\lambda}\}_{\lambda\in \Lamb
 ::: {.callout-note collapse="true" icon=false appearance="simple"}
 ## (6) If $I$ is an ideal and $\sqrt{I}$ its radical, then $V(I)=V(\sqrt{I}).$
 
-This result is obvious by the following intuition: View an element $f\in R$ as a "function" on $\Spec(R)$ where the value of $f$ at $\fp\in \Spec(R)$ is $f$ mod $\fp$. $\fp$ contains the element $f$ if and only if $f$ vanishes mod $\fp$. Since $\fp$ is a prime ideal, $R/\fp$ *is a domain (!)*, so $f$ vanishes mod $\fp$ if and only if $f^n$ vanishes mod $\fp$ for all $n\in \ZZ^+$.
+This result is obvious by the following intuition: View an element $f\in R$ as a "function" on $\Spec(R)$ where the value of $f$ at $\fp\in \Spec(R)$ is $f$ mod $\fp$. $\fp$ contains the element $f$ if and only if $f$ vanishes mod $\fp$. Since $\fp$ is a prime ideal, $R/\fp$ *is a domain (!)*, hence for all $n\in \ZZ$, $f$ vanishes mod $\fp$ if and only if $f^n$ vanishes mod $\fp$.
 
 *Proof.* Recall that for an ideal $I$, $$\sqrt{I}=\{x\in R:x^n\in I\text{ for some }n\in \ZZ^+\}.$$ Clearly $I\subset \sqrt{I}$, so $\fp\supset \sqrt{I}$ implies $\fp\supset I$ and therefore $V(\sqrt{I})\subset V(I)$. 
 
@@ -160,7 +166,19 @@ Conversely, suppose $x\in \sqrt{I}$ so that $x^n\in I$ for some $n\in \ZZ^+$. If
 
 *Proof.* $\subset$: If $x\in \sqrt{I}$ then $x^n\in I$ for some $n\in \ZZ^+$, and therefore $x^n\in \fp$ for each prime ideal $\fp$ over $I$; since $\fp$ is prime, this implies $x\in \fp$. 
 
-$\supset$: Suppose there exists an $x\in R$ contained in every prime over $I$ such that $x^n\notin I$ for all $n\in \ZZ^+$. *To be continued*...
+$\supset$: Suppose there exists an $x\in R$ contained in every prime over $I$ such that $x^n\notin I$ for all $n\in \ZZ^+$. 
+
+Consider the multiplicative set $S=\{1,x,x^2,...\}.$ There is a heuristic (Stacks Project 10.28, *A Meta-Observation About Prime Ideals*) that an ideal that is maximal with respect to holding a certain property is often prime. We will use one instance of this idea here.
+
+::: {.callout-note collapse="true" icon=false appearance="simple"}
+## (Lemma) Let $S\subset R$ be a multiplicative set and consider the set $\mathcal{I}$ of all ideals of $R$ disjoint from $S$. If $I$ is a maximal element of $\mathcal{I}$, then $I$ is prime.
+
+*Proof.* Let $\mathcal{I}$ be defined as above and let $I$ be a maximal element of $\mathcal{I}$. Now let $x,y\in R$ such that $xy\in I$.
+
+If $x,y\in S$ then $xy\in S$ since $S$ is closed under multiplication, so we see that $x\notin S$ or $y\notin S$. 
+<span style="float: right;">$\square$</span>
+:::
+
 <span style="float: right;">$\square$</span>
 :::
 
@@ -189,6 +207,6 @@ Finally, given any $e_i$ and $\fa_i$ satisfying (2) and either (3) or (4), neces
 
 *Proof.* First we recall the necessary definitions. $e_1,e_2$ are *complementary idempotents* if $e_1^2=1=e_2^2$, $e_1e_2=0$, and $e_1+e_2=1$. Two ideals $\fa_1,\fa_2$ of $R$ are *comaximal* if $\fa_1+\fa_2=(1)=R$.
 
-$(1)\Rightarrow (3)$: Since $X_1,X_2$ are closed subsets of $\Spec(R)$, the definition of the Zariski topology implies that $$X_1=V(\fa_1),\text{ }X_2=V(\fa_2)$$ for some ideals $\fa_1,\fa_2\subset R$. Our assumptions together with Exercise 2.23 imply that $$X_1\cup  X_2=V(\fa_1)\cup V(\fa_2)=V(\fa_1\cap \fa_2)=V(\fa_1\fa_2)=X.$$ *To be continued...*
+$(1)\Rightarrow (3)$: Since $X_1,X_2$ are closed subsets of $\Spec(R)$, the definition of the Zariski topology implies that $$X_1=V(\fa_1),\text{ }X_2=V(\fa_2)$$ for some ideals $\fa_1,\fa_2\subset R$. Our assumptions together with Exercise 2.23 imply that $$X_1\cup  X_2=V(\fa_1)\cup V(\fa_2)=V(\fa_1\cap \fa_2)=V(\fa_1\fa_2)=X.$$ Thus, $$\fa_1\fa_2\subset \sqrt{(0)}.$$ Additionally, $$\emptyset=X_1\cap X_2=V(\fa_1)\cap V(\fa_2)=V(\fa_1+\fa_2)$$ implies $\fa_1+\fa_2=R$.
 <span style="float: right;">$\square$</span>
 :::

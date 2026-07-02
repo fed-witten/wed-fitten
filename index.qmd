@@ -1,11 +1,46 @@
 ---
 title: "mathslop dot org"
 ---
+::: {.hidden}
+$$
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fP}{\mathfrak{P}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+\newcommand{\SL}{\text{SL}}
+\newcommand{\GL}{\text{GL}}
+$$
+:::
 
 Goal is to write some math every day. I make no promise on quality, but ideally these get better over time.
 
 ## Daily Math
 
+- [7/2 Hilbert's Nullstellensatz: Integral Extensions Day 1](posts/july2.qmd)
 - [6/19-6/??: The Prime Spectrum of a Ring](posts/june19.qmd)
 - [6/18: An Elementary Number Theory Problem (Cont.)](posts/june18.qmd)
 - [6/17: An Elementary Number Theory Problem](posts/june17.qmd)
@@ -13,3 +48,4 @@ Goal is to write some math every day. I make no promise on quality, but ideally 
 - [6/15: Problem B1 from the 2025 Putnam](posts/june15.qmd)
 - [6/14: Problem B2 from the 2022 Putnam](posts/june14.qmd)
 - [6/13: Problem B3 from the 2022 Putnam](posts/june13.qmd)
+
