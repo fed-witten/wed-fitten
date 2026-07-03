@@ -236,7 +236,6 @@ window.Quarto = {
 <p>These are the <em>quadratic integer rings</em>. Each quadratic integer ring is integrally closed with fraction field <span class="math inline">\(\QQ(\sqrt{d}).\)</span></p>
 <p><strong>Example 2.</strong> The following example is drawn from Hartshorne Exercise I.3.17.</p>
 <p>Whether a ring is integrally closed carries geometric meaning. Let <span class="math inline">\(Y=Z(y^2-x^3)\)</span> be the <em>cuspidal cubic curve</em>, pictured below.</p>
-<p>A variety <span class="math inline">\(Y\)</span> is said to be <em>normal</em> if for all points <span class="math inline">\(P\in Y\)</span>, the local ring <span class="math inline">\(\cO_P\)</span> is integrally closed. We will show that the cuspidal cubic is not normal by showing that the local ring of <span class="math inline">\(Y\)</span> at the cusp fails to be integrally closed.</p>
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -245,6 +244,7 @@ window.Quarto = {
 </figure>
 </div>
 </div>
+<p>A variety <span class="math inline">\(Y\)</span> is said to be <em>normal</em> if for all points <span class="math inline">\(P\in Y\)</span>, the local ring <span class="math inline">\(\cO_P\)</span> is integrally closed. We will show that the cuspidal cubic is not normal by showing that the local ring of <span class="math inline">\(Y\)</span> at the cusp fails to be integrally closed.</p>
 <p>The coordinate ring <span class="math inline">\(A(Y)\)</span> of this curve is isomorphic to the integral domain <span class="math inline">\(R=k[t^2,t^3]\)</span> (<span class="math inline">\(R\)</span> is a domain since it is a subring of the domain <span class="math inline">\(k[t]\)</span>) via the map <span class="math inline">\(x\mapsto t^2\)</span>, <span class="math inline">\(y\mapsto t^3\)</span>. The local ring <span class="math inline">\(\cO_{P,Y}\)</span> of <span class="math inline">\(Y\)</span> at <span class="math inline">\(P=(0,0)\)</span> can be identified with the rational functions on <span class="math inline">\(Y\)</span> that are regular at <span class="math inline">\((0,0)\)</span>, which in turn we can identify with the local ring <span class="math inline">\(R_{(t^2,t^3)}\)</span>, which is identified with the elements of the fraction field of <span class="math inline">\(R\)</span> with denominator not vanishing at <span class="math inline">\(0\in \bA_k^1\)</span>, <span class="math inline">\(k[t]=A(\bA_k^1)\)</span>.</p>
 <p>The ring <span class="math inline">\(\cO_{P,Y}\)</span> is not integrally closed. First, note that <span class="math inline">\(t^3/t^2=t\in \Frac(R)\)</span>, and in fact <span class="math inline">\(\Frac{R}=k(t).\)</span> Since <span class="math inline">\(t\)</span> is a root of the monic polynomial <span class="math inline">\(X^2-t^2\in R[X]\)</span>, <span class="math inline">\(t\)</span> is integral over <span class="math inline">\(R\)</span>. However, I claim that we cannot write <span class="math inline">\(t\)</span> as a rational function <span class="math inline">\(f(t)/g(t)\)</span> with <span class="math inline">\(f,g\in k[t^2,t^3]\)</span> and <span class="math inline">\(g(t)\)</span> not vanishing at <span class="math inline">\(0\)</span>.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
@@ -263,7 +263,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Since <span class="math inline">\(t\)</span> cannot be written as an element of <span class="math inline">\(\Frac(R)\)</span> with denominator not vanishing at <span class="math inline">\(0\)</span>, i.e.&nbsp;<span class="math inline">\(t\notin R_(t^2,t^3)\)</span>, we see that <span class="math inline">\(R_{(t^2,t^3)}\)</span> is not integrally closed. Hence the local ring <span class="math inline">\(\cO_{P,Y}\)</span> is not integrally closed.</p>
+<p>Since <span class="math inline">\(t\)</span> cannot be written as an element of <span class="math inline">\(\Frac(R)\)</span> with denominator not vanishing at <span class="math inline">\(0\)</span>, i.e.&nbsp;<span class="math inline">\(t\notin R_{(t^2,t^3)}\)</span>, we see that <span class="math inline">\(R_{(t^2,t^3)}\)</span> is not integrally closed. Hence the local ring <span class="math inline">\(\cO_{P,Y}\)</span> is not integrally closed.</p>
 </section>
 <section id="an-easy-lemma" class="level3">
 <h3 class="anchored" data-anchor-id="an-easy-lemma">An easy lemma</h3>
