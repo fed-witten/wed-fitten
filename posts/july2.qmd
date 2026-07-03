@@ -62,7 +62,11 @@ More precisely, we will (eventually) show that there is an equivalence of catego
 
 One can easily check that $\ZZ$ is integrally closed in $\QQ$. Thus, the notion of a ring integrally closed inside its fraction field generalizes the way $\ZZ$ sits inside of $\QQ$.
 
-**Example 1.** $\ZZ\subset \ZZ[i]$ is an integral extension of rings. More generally, for any squarefree integer $d\neq 0$, the ring $\ZZ[\sqrt{d}]$ is integral over $\ZZ$ when $d\equiv 2,3\mod 4$, and $\ZZ[(1+\sqrt{d})/2]$ is integral over $\ZZ$ when $d\equiv 1\mod 4$. These are the *quadratic integer rings*. Each quadratic integer ring is integrally closed with fraction field $\QQ(\sqrt{d}).$
+**Example 1.** $\ZZ\subset \ZZ[i]$ is an integral extension of rings. More generally, for any squarefree integer $d\neq 0$, the ring $\ZZ[\sqrt{d}]$ is integral over $\ZZ$. 
+
+When $d\equiv 2,3\mod 4$, $\ZZ[\sqrt{d}]$ is the *integral closure*  of $\ZZ$ inside the field $\QQ(\sqrt{d})$, meaning $\ZZ[\sqrt{d}]$ is precisely the set of elements of $\QQ(\sqrt{d})$ integral over $\ZZ$;  $\ZZ[(1+\sqrt{d})/2]$ is the integral closure of $\ZZ$ inside $\QQ(\sqrt{d})$ when $d\equiv 1\mod 4$. 
+
+These are the *quadratic integer rings*. Each quadratic integer ring is integrally closed with fraction field $\QQ(\sqrt{d}).$
 
 **Example 2.** The following example is drawn from Hartshorne Exercise I.3.17.
 
@@ -74,7 +78,7 @@ A variety $Y$ is said to be *normal* if for all points $P\in Y$, the local ring 
 ![p.22, [*Rational Points on Elliptic Curves*](https://link.springer.com/book/10.1007/978-3-319-18588-0) by Silverman and Tate](../images/cuspidalcubic.png){fig-align="center" width=50%}
 :::
 
-The coordinate ring $A(Y)$ of this curve is isomorphic to the integral domain $R=k[t^2,t^3]$ ($R$ is a domain since it is a subring of the domain $k[t]$) via the map $x\mapsto t^2$, $y\mapsto t^3$. The local ring $\cO_{P,Y}$ of $Y$ at $P=(0,0)$ can be identified with the rational functions on $Y$ that are regular at $(0,0)$, which in turn we can identify with elements of the fraction field of $R$ with denominator not vanishing at $0\in \bA_k^1$, $k[t]=A(\bA_k^1)$ (this is the local ring $R_{(t^2,t^3)}$).
+The coordinate ring $A(Y)$ of this curve is isomorphic to the integral domain $R=k[t^2,t^3]$ ($R$ is a domain since it is a subring of the domain $k[t]$) via the map $x\mapsto t^2$, $y\mapsto t^3$. The local ring $\cO_{P,Y}$ of $Y$ at $P=(0,0)$ can be identified with the rational functions on $Y$ that are regular at $(0,0)$, which in turn we can identify with the local ring $R_{(t^2,t^3)}$, which is identified with the elements of the fraction field of $R$ with denominator not vanishing at $0\in \bA_k^1$, $k[t]=A(\bA_k^1)$.
 
 The ring $\cO_{P,Y}$ is not integrally closed. First, note that $t^3/t^2=t\in \Frac(R)$, and in fact $\Frac{R}=k(t).$ Since $t$ is a root of the monic polynomial $X^2-t^2\in R[X]$, $t$ is integral over $R$. However, I claim that we cannot write $t$ as a rational function $f(t)/g(t)$ with $f,g\in k[t^2,t^3]$ and $g(t)$ not vanishing at $0$. 
 
