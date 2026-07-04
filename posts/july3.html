@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-07-03">
 
-<title>mathslop dot org – mathslop</title>
+<title>Hilbert’s Nullstellensatz: Integral Extensions Day 2 – mathslop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +27,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,7 +102,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -111,7 +112,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">mathslop</span>
     </a>
   </div>
@@ -122,7 +123,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -141,7 +142,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#daily-math" id="toc-daily-math" class="nav-link active" data-scroll-target="#daily-math">Daily Math</a></li>
+  <li><a href="#some-definitions" id="toc-some-definitions" class="nav-link active" data-scroll-target="#some-definitions">Some definitions</a></li>
+  <li><a href="#a-characterization-of-integral-elements" id="toc-a-characterization-of-integral-elements" class="nav-link" data-scroll-target="#a-characterization-of-integral-elements">A characterization of integral elements</a></li>
   </ul>
 </nav>
     </div>
@@ -150,7 +152,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">mathslop dot org</h1>
+<h1 class="title">Hilbert’s Nullstellensatz: Integral Extensions Day 2</h1>
 </div>
 
 
@@ -158,6 +160,12 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 3, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -198,23 +206,51 @@ window.Quarto = {
 \newcommand{\Spa}{\text{Spa}}
 \newcommand{\Spf}{\text{Spf}}
 \newcommand{\SL}{\text{SL}}
-\newcommand{\GL}{\text{GL}}
+\newcommand{\Frac}{\text{Frac}}
 \]</span></p>
 </div>
-<p>Goal is to write some math every day. I make no promise on quality, but ideally these get better over time.</p>
-<section id="daily-math" class="level2">
-<h2 class="anchored" data-anchor-id="daily-math">Daily Math</h2>
-<ul>
-<li><a href="./posts/july3.html">7/3 Hilbert’s Nullstellensatz: Integral Extensions Day 2</a></li>
-<li><a href="./posts/july2.html">7/2 Hilbert’s Nullstellensatz: Integral Extensions Day 1</a></li>
-<li><a href="./posts/june19.html">6/19-6/??: The Prime Spectrum of a Ring</a></li>
-<li><a href="./posts/june18.html">6/18: An Elementary Number Theory Problem (Cont.)</a></li>
-<li><a href="./posts/june17.html">6/17: An Elementary Number Theory Problem</a></li>
-<li><a href="./posts/june16.html">6/16: Problem A1 from the 2024 Putnam</a></li>
-<li><a href="./posts/june15.html">6/15: Problem B1 from the 2025 Putnam</a></li>
-<li><a href="./posts/june14.html">6/14: Problem B2 from the 2022 Putnam</a></li>
-<li><a href="./posts/june13.html">6/13: Problem B3 from the 2022 Putnam</a></li>
-</ul>
+<p>In the last post we defined integral extensions of rings and the notion of a domain integrally closed inside its fraction field. We gave quadratic integer rings as examples of integral extensions of <span class="math inline">\(\ZZ\)</span> and showed that the local ring at the cusp of the cuspidal cubic <span class="math inline">\(Y=Z(y^2-x^3)\)</span> is not integrally closed, giving one illustration of the geometric consequences of (the failure of) integrality. We ended by proving that all unique factorization domains are integrally closed.</p>
+<p>In this post we will begin the proof of a proposition characterizing integral elements of a ring extension <span class="math inline">\(S\supset R\)</span>.</p>
+<p>As with yesterday’s post, we more or less follow Chapter 5 of Daniel Coray’s <a href="https://link.springer.com/book/10.1007/978-3-030-43781-7"><em>Notes on Geometry and Arithmetic</em></a>, and all rings are commutative with 1.</p>
+<section id="some-definitions" class="level2">
+<h2 class="anchored" data-anchor-id="some-definitions">Some definitions</h2>
+<p>For our first result, we will need to define algebras and modules of finite type. We will recall the standard definitions from <a href="https://www.mi.fu-berlin.de/en/math/groups/arithmetic_geometry/teaching/exercises/Altman_-Kleiman---A-term-of-commutative-algebra-_2017_.pdf">Altman-Kleiman</a>.</p>
+<p><strong>Definition 1.</strong> Let <span class="math inline">\(R\)</span> be a ring. An <span class="math inline">\(R\)</span><em>-algebra</em> is a ring <span class="math inline">\(R'\)</span> equipped with a ring map <span class="math inline">\(\vp:R\to R'\)</span>, called the <em>structure map</em>. A homomorphism of <span class="math inline">\(R\)</span>-algebras is a ring map that is compatible with the structure maps.</p>
+<p><strong>Definition 2.</strong> We say an <span class="math inline">\(R\)</span>-algebra <span class="math inline">\(R'\)</span> with structure map <span class="math inline">\(\vp:R\to R'\)</span> is a <em>finitely generated</em> <span class="math inline">\(R\)</span><em>-algebra</em> or an <span class="math inline">\(R\)</span><em>-algebra of finite type</em> or is <em>algebra-finite</em> over <span class="math inline">\(R\)</span> if there exist <span class="math inline">\(x_1,x_2,...,x_n\in R'\)</span> such that <span class="math inline">\(R'=\vp(R)[x_1,x_2,...,x_n].\)</span></p>
+<p><strong>Definition 3.</strong> An <span class="math inline">\(R\)</span>-module <span class="math inline">\(M\)</span> is a <em>finitely generated</em> <span class="math inline">\(R\)</span><em>-module</em> or an <span class="math inline">\(R\)</span>-<em>module of finite type</em> if <span class="math inline">\(M\)</span> has a finite generating set, that is, there exists a finite set <span class="math inline">\(\{x_1,x_2,...,x_n\}\subset M\)</span> such that for each <span class="math inline">\(m\in M\)</span>, there exist <span class="math inline">\(r_1,r_2,...,r_n\in R\)</span> such that <span class="math display">\[m=\sum_{k=1}^n r_ix_i.\]</span></p>
+<p><strong>Example 1.</strong> Consider the polynomial ring <span class="math inline">\(R[x]\)</span> where <span class="math inline">\(R\)</span> is a nonzero ring. This is an <span class="math inline">\(R\)</span>-algebra of finite type, but <em>not</em> an <span class="math inline">\(R\)</span>-module of finite type: for any finite set of elements <span class="math inline">\(f_1,f_2,...,f_n\in R[x]\)</span>, any <span class="math inline">\(R\)</span>-linear combination of the <span class="math inline">\(f_i\)</span> has degree at most <span class="math display">\[\max\{\deg(f_1),\deg(f_2),...,\deg(f_n)\}.\]</span></p>
+<p>This example shows that a finite type <span class="math inline">\(R\)</span>-algebra may not be finite type as an <span class="math inline">\(R\)</span>-module. With this in mind, we make another definition.</p>
+<p><strong>Definition 4.</strong> An <span class="math inline">\(R\)</span>-algebra <span class="math inline">\(R'\)</span> is <em>module-finite</em> if it is finitely generated as an <span class="math inline">\(R\)</span>-module.</p>
+<p><strong>Example 2.</strong> <span class="math inline">\(\ZZ[i]\)</span> (or any other quadratic integer ring) is both algebra-finite and module-finite over <span class="math inline">\(\ZZ\)</span>; algebra-finiteness is clear, and it is also module-finite since each element <span class="math inline">\(\alpha\in \ZZ[i]\)</span> can be written in the form <span class="math inline">\(\alpha=a+bi\)</span> for some <span class="math inline">\(a,b\in \ZZ\)</span>.</p>
+</section>
+<section id="a-characterization-of-integral-elements" class="level2">
+<h2 class="anchored" data-anchor-id="a-characterization-of-integral-elements">A characterization of integral elements</h2>
+<p><strong>Proposition 1.</strong> Let <span class="math inline">\(R\subset S\)</span> be two rings and let <span class="math inline">\(\xi\in S\)</span>. Then the following are equivalent:</p>
+<ol type="a">
+<li><span class="math inline">\(\xi\)</span> is integral over <span class="math inline">\(R\)</span>;</li>
+<li>The ring <span class="math inline">\(R[\xi]\)</span> is an <span class="math inline">\(R\)</span>-module of finite type;</li>
+<li><span class="math inline">\(R[\xi]\)</span> is contained in a ring <span class="math inline">\(T\)</span>, which is an <span class="math inline">\(R\)</span>-module of finite type.</li>
+</ol>
+<p><em>Proof.</em> <span class="math inline">\((a\Rightarrow b)\)</span> If <span class="math inline">\(\xi\)</span> is integral over <span class="math inline">\(R\)</span>, then there exist <span class="math inline">\(a_0,a_1,...,a_n\in R\)</span> such that <span class="math display">\[a_0+a_1\xi+...+a_n\xi^n+\xi^{n+1}=0;\]</span> in particular, <span class="math display">\[\xi^{n+1}=-a_0-a_1\xi-...-a_n\xi^n.\]</span> For any <span class="math inline">\(f\in R[\xi]\)</span>, finitely many applications of this identity to the powers of <span class="math inline">\(\xi\)</span> of degree higher than <span class="math inline">\(n\)</span> will yield an expression for <span class="math inline">\(f\)</span> as a polynomial in <span class="math inline">\(\xi\)</span> of degree at most <span class="math inline">\(n\)</span>; thus, <span class="math inline">\(R[\xi]\)</span> is generated as an <span class="math inline">\(R\)</span>-module by <span class="math inline">\(\{1,\xi,\xi^2,...,\xi^n\}.\)</span></p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Remark.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here we see one reason why it matters that an integral element satisfy a <em>monic</em> polynomial equation: we are guaranteed that <em>any</em> scalar multiple of <span class="math inline">\(\xi^{n+1}\)</span> is an <span class="math inline">\(R\)</span>-linear combination of lower degree powers of <span class="math inline">\(\xi\)</span>. If we only required that <span class="math inline">\(\xi\)</span> satisfy a (not necessarily monic) polynomial equation with coefficients in <span class="math inline">\(R\)</span>, we would only be able to say that <span class="math display">\[\alpha \xi^{n+1}=-a_0-...-a_n\xi^n\]</span> for some <span class="math inline">\(\alpha\in R\)</span>, and <span class="math inline">\(\alpha\)</span> may not be invertible in <span class="math inline">\(R\)</span>.</p>
+<p>For example, take <span class="math inline">\(R=\ZZ\)</span>, <span class="math inline">\(S=\QQ\)</span>, and <span class="math inline">\(\xi=1/2\)</span>. <span class="math inline">\(1/2\)</span> is not integral over <span class="math inline">\(\ZZ\)</span>, and indeed <span class="math inline">\(\ZZ[1/2]\)</span> is not finitely generated as a <span class="math inline">\(\ZZ\)</span>-module, as any finite collection of elements of <span class="math inline">\(\ZZ[1/2]\)</span> has some element with largest denominator, and taking <span class="math inline">\(\ZZ\)</span>-linear combinations cannot give us an element of larger denominator. However, <span class="math inline">\(1/2\)</span> is a root of the <em>non-monic</em> polynomial <span class="math inline">\(f(x)=2x-1\in \ZZ[x]\)</span>.</p>
+</div>
+</div>
+</div>
+<p><span class="math inline">\((b\Rightarrow c)\)</span> Just take <span class="math inline">\(T=R[\xi].\)</span></p>
+<p><span class="math inline">\((c\Rightarrow a)\)</span> We will continue with this part tomorrow. Coray gives two proofs; the first is quick, but requires the assumption that <span class="math inline">\(R\)</span> is Noetherian, and the second requires a version of the Cayley-Hamilton theorem for modules. We will give both proofs and aim to make them more self-contained.</p>
 
 
 </section>
