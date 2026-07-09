@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-07-09">
 
-<title>july5 – mathslop</title>
+<title>Hilbert’s Nullstellensatz: Integral Extensions Day 4 – mathslop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -107,17 +137,116 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#recap-and-aim-for-today" id="toc-recap-and-aim-for-today" class="nav-link active" data-scroll-target="#recap-and-aim-for-today">Recap and aim for today</a></li>
+  <li><a href="#some-corollaries-of-proposition-1" id="toc-some-corollaries-of-proposition-1" class="nav-link" data-scroll-target="#some-corollaries-of-proposition-1">Some corollaries of Proposition 1</a></li>
+  <li><a href="#tomorrow" id="toc-tomorrow" class="nav-link" data-scroll-target="#tomorrow">Tomorrow</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Hilbert’s Nullstellensatz: Integral Extensions Day 4</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 9, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fP}{\mathfrak{P}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+\newcommand{\SL}{\text{SL}}
+\newcommand{\Frac}{\text{Frac}}
+\]</span></p>
+</div>
+<p>I am too busy being invaded by parasites (having to attend to basic obligations) to maintain the daily schedule. If I stop being a bitch I’ll get back on it. Only time will tell.</p>
+<p>Main reference: Chapter 5 of Daniel Coray’s <a href="https://link.springer.com/book/10.1007/978-3-030-43781-7"><em>Notes on Geometry and Arithmetic</em></a>. All rings are commutative with 1</p>
+<section id="recap-and-aim-for-today" class="level2">
+<h2 class="anchored" data-anchor-id="recap-and-aim-for-today">Recap and aim for today</h2>
+<p>Last time we completed the proof of the following proposition:</p>
+<p><strong>Proposition 1.</strong> Let <span class="math inline">\(R\subset S\)</span> be two rings and let <span class="math inline">\(\xi\in S\)</span>. Then the following are equivalent:</p>
+<ol type="a">
+<li><span class="math inline">\(\xi\)</span> is integral over <span class="math inline">\(R\)</span>;</li>
+<li>The ring <span class="math inline">\(R[\xi]\)</span> is an <span class="math inline">\(R\)</span>-module of finite type;</li>
+<li><span class="math inline">\(R[\xi]\)</span> is contained in a ring <span class="math inline">\(T\)</span>, which is an <span class="math inline">\(R\)</span>-module of finite type.</li>
+</ol>
+<p>We assumed that <span class="math inline">\(R\)</span> is Noetherian to give a quick proof of <span class="math inline">\((c)\Rightarrow (a)\)</span>. This assumption is not necessary, and when <span class="math inline">\(R\)</span> is not Noetherian the result follows by a version of the Cayley-Hamilton theorem for modules that I do not plan to write up; see yesterday’s post for references. Coordinate rings of varieties and rings of integers of number fields are the rings we are most concerned with, and these are always Noetherian.</p>
+<p>Our main goal for today is to show that given an extension of rings <span class="math inline">\(R\subset S\)</span>, the set of elements of <span class="math inline">\(S\)</span> that are integral over <span class="math inline">\(R\)</span> forms a ring. This will follow from a sequence of easy corollaries of Proposition 1.</p>
+</section>
+<section id="some-corollaries-of-proposition-1" class="level2">
+<h2 class="anchored" data-anchor-id="some-corollaries-of-proposition-1">Some corollaries of Proposition 1</h2>
+<p><strong>Corollary 1.</strong> Let <span class="math inline">\(\xi_1,\xi_2,...,\xi_n\in S\)</span> be integral elements over <span class="math inline">\(R\)</span>. Then the ring <span class="math inline">\(R[\xi_1,\xi_2,...,\xi_n]\)</span> is an <span class="math inline">\(R\)</span>-module of finite type.</p>
+<p><em>Proof sketch.</em> This is an easy induction argument.</p>
+<p>The base case <span class="math inline">\(n=1\)</span> is the implication <span class="math inline">\(a\Rightarrow b\)</span> from Proposition 1.</p>
+<p>If the proposition holds for each positive integer less than <span class="math inline">\(n&gt;1,\)</span> then we see that <span class="math display">\[A[\xi_1,\xi_2,...,\xi_n]=A[\xi_1,\xi_2,...,\xi_{n-1}][\xi_n]\]</span> is a finite type <span class="math inline">\(A[\xi_1,\xi_2,...,\xi_{n-1}]\)</span>-module by the base case, and in turn <span class="math inline">\(A[\xi_1,\xi_2,...,\xi_{n-1}]\)</span> is a finite type <span class="math inline">\(A\)</span>-module by the induction hypothesis. Take a system of generators for each, then take all products of these generators; since everything is finite type, this is a finite set.</p>
+<p><span style="float: right;"><span class="math inline">\(\square\)</span></span><br>
+</p>
+<p><strong>Corollary 2.</strong> If <span class="math inline">\(\alpha,\beta\)</span> are integral over <span class="math inline">\(R\)</span>, then so are <span class="math inline">\(\alpha+\beta\)</span> and <span class="math inline">\(\alpha\cdot\beta.\)</span></p>
+<p><em>Proof.</em> By Corollary 1, <span class="math inline">\(R[\alpha,\beta]\)</span> is a finite type <span class="math inline">\(R\)</span>-module. Since <span class="math inline">\(R[\alpha+\beta],R[\alpha\cdot\beta]\subset R[\alpha,\beta]\)</span>, the implication <span class="math inline">\(c\Rightarrow a\)</span> from Proposition 1 implies <span class="math inline">\(\alpha+\beta\)</span> and <span class="math inline">\(\alpha\cdot\beta\)</span> are integral over <span class="math inline">\(R\)</span>.</p>
+<p><span style="float: right;"><span class="math inline">\(\square\)</span></span><br>
+</p>
+<p>In particular, we see that <span class="math inline">\(R[\alpha]\subset S\)</span> is integral over <span class="math inline">\(R\)</span> if and only if <span class="math inline">\(\alpha\)</span> is integral over <span class="math inline">\(R\)</span>, and the elements of <span class="math inline">\(S\)</span> that are integral over <span class="math inline">\(R\)</span> form a ring.</p>
+<p><strong>Example 1.</strong> When <span class="math inline">\(R=\ZZ\)</span> and <span class="math inline">\(S=\overline{\QQ}\)</span>, the elements of <span class="math inline">\(\overline{\QQ}\)</span> integral over <span class="math inline">\(\ZZ\)</span> are called the <em>algebraic integers</em>. When <span class="math inline">\(K/\QQ\)</span> is a finite field extension, the set of elements of <span class="math inline">\(K\)</span> integral over <span class="math inline">\(\ZZ\)</span> is called the <em>ring of integers</em> of <span class="math inline">\(K\)</span>, typically denoted <span class="math inline">\(\cO_K\)</span>.</p>
+<p><strong>Corollary 3</strong> If <span class="math inline">\(R\subset S\subset T\)</span> are rings with <span class="math inline">\(T\)</span> integral over <span class="math inline">\(S\)</span> and <span class="math inline">\(S\)</span> integral over <span class="math inline">\(R\)</span>, then <span class="math inline">\(T\)</span> is integral over <span class="math inline">\(R\)</span>.</p>
+<p><em>Non-proof.</em> Exercise or look at Coray. Or come back tomorrow and I might do it.</p>
+</section>
+<section id="tomorrow" class="level2">
+<h2 class="anchored" data-anchor-id="tomorrow">Tomorrow</h2>
+<p>We’ve covered enough stuff to do the Weak Nullstellensatz tomorrow. We should then be able to prove the Nullstellensatz the following day.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
