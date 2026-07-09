@@ -1,0 +1,89 @@
+---
+title: "Hilbert's Nullstellensatz: Integral Extensions Day 4"
+date: 07/09/2026
+---
+
+::: {.hidden}
+$$
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fP}{\mathfrak{P}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+\newcommand{\SL}{\text{SL}}
+\newcommand{\Frac}{\text{Frac}}
+$$
+:::
+
+I am too busy being invaded by parasites (having to attend to basic obligations) to maintain the daily schedule. If I stop being a bitch I'll get back on it. Only time will tell.
+
+Main reference: Chapter 5 of Daniel Coray's [*Notes on Geometry and Arithmetic*](https://link.springer.com/book/10.1007/978-3-030-43781-7). All rings are commutative with 1
+
+## Recap and aim for today
+
+Last time we completed the proof of the following proposition:
+
+**Proposition 1.** Let $R\subset S$ be two rings and let $\xi\in S$. Then the following are equivalent:
+
+(a) $\xi$ is integral over $R$;
+(b) The ring $R[\xi]$ is an $R$-module of finite type;
+(c) $R[\xi]$ is contained in a ring $T$, which is an $R$-module of finite type.
+
+We assumed that $R$ is Noetherian to give a quick proof of $(c)\Rightarrow (a)$. This assumption is not necessary, and when $R$ is not Noetherian the result follows by a version of the Cayley-Hamilton theorem for modules that I do not plan to write up; see yesterday's post for references. Coordinate rings of varieties and rings of integers of number fields are the rings we are most concerned with, and these are always Noetherian.
+
+Our main goal for today is to show that given an extension of rings $R\subset S$, the set of elements of $S$ that are integral over $R$ forms a ring. This will follow from a sequence of easy corollaries of Proposition 1.
+
+## Some corollaries of Proposition 1
+
+**Corollary 1.** Let $\xi_1,\xi_2,...,\xi_n\in S$ be integral elements over $R$. Then the ring $R[\xi_1,\xi_2,...,\xi_n]$ is an $R$-module of finite type.
+
+*Proof sketch.* This is an easy induction argument.
+
+The base case $n=1$ is the implication $a\Rightarrow b$ from Proposition 1.
+
+If the proposition holds for each positive integer less than $n>1,$ then we see that $$A[\xi_1,\xi_2,...,\xi_n]=A[\xi_1,\xi_2,...,\xi_{n-1}][\xi_n]$$ is a finite type $A[\xi_1,\xi_2,...,\xi_{n-1}]$-module by the base case, and in turn $A[\xi_1,\xi_2,...,\xi_{n-1}]$ is a finite type $A$-module by the induction hypothesis. Take a system of generators for each, then take all products of these generators; since everything is finite type, this is a finite set.
+
+<span style="float: right;">$\square$</span>
+\
+
+**Corollary 2.** If $\alpha,\beta$ are integral over $R$, then so are $\alpha+\beta$ and $\alpha\cdot\beta.$
+
+*Proof.* By Corollary 1, $R[\alpha,\beta]$ is a finite type $R$-module. Since $R[\alpha+\beta],R[\alpha\cdot\beta]\subset R[\alpha,\beta]$, the implication $c\Rightarrow a$ from Proposition 1 implies $\alpha+\beta$ and $\alpha\cdot\beta$ are integral over $R$.
+
+<span style="float: right;">$\square$</span>
+\
+
+In particular, we see that $R[\alpha]\subset S$ is integral over $R$ if and only if $\alpha$ is integral over $R$, and the elements of $S$ that are integral over $R$ form a ring.
+
+**Example 1.** When $R=\ZZ$ and $S=\overline{\QQ}$, the elements of $\overline{\QQ}$ integral over $\ZZ$ are called the *algebraic integers*. When $K/\QQ$ is a finite field extension, the set of elements of $K$ integral over $\ZZ$ is called the *ring of integers* of $K$, typically denoted $\cO_K$.
+
+**Corollary 3** If $R\subset S\subset T$ are rings with $T$ integral over $S$ and $S$ integral over $R$, then $T$ is integral over $R$.
+
+*Non-proof.* Exercise or look at Coray. Or come back tomorrow and I might do it.
+
+## Tomorrow
+
+We've covered enough stuff to do the Weak Nullstellensatz tomorrow. We should then be able to prove the Nullstellensatz the following day.

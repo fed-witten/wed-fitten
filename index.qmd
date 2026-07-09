@@ -38,8 +38,9 @@ $$
 
 Goal is to write some math every day. I make no promise on quality, but ideally these get better over time.
 
-## Daily Math
+## (Almost) Daily Math
 
+- [7/9 Hilbert's Nullstellensatz: Integral Extensions Day 4](posts/july5.qmd)
 - [7/4 Hilbert's Nullstellensatz: Integral Extensions Day 3](posts/july4.qmd)
 - [7/3 Hilbert's Nullstellensatz: Integral Extensions Day 2](posts/july3.qmd)
 - [7/2 Hilbert's Nullstellensatz: Integral Extensions Day 1](posts/july2.qmd)
