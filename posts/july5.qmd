@@ -64,7 +64,7 @@ Our main goal for today is to show that given an extension of rings $R\subset S$
 
 The base case $n=1$ is the implication $a\Rightarrow b$ from Proposition 1.
 
-If the proposition holds for each positive integer less than $n>1,$ then we see that $$A[\xi_1,\xi_2,...,\xi_n]=A[\xi_1,\xi_2,...,\xi_{n-1}][\xi_n]$$ is a finite type $A[\xi_1,\xi_2,...,\xi_{n-1}]$-module by the base case, and in turn $A[\xi_1,\xi_2,...,\xi_{n-1}]$ is a finite type $A$-module by the induction hypothesis. Take a system of generators for each, then take all products of these generators; since everything is finite type, this is a finite set.
+If the proposition holds for each positive integer less than $n>1,$ then we see that $$A[\xi_1,\xi_2,...,\xi_n]=A[\xi_1,\xi_2,...,\xi_{n-1}][\xi_n]$$ is a finite type $A[\xi_1,\xi_2,...,\xi_{n-1}]$-module by the base case, and in turn $A[\xi_1,\xi_2,...,\xi_{n-1}]$ is a finite type $A$-module by the induction hypothesis. Take a system of generators for each, then take all products of these generators; this forms a finite system of generators for $A[\xi_1,\xi_2,...,\xi_n]$ as an $A$-module.
 
 <span style="float: right;">$\square$</span>
 \
