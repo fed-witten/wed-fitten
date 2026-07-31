@@ -40,7 +40,7 @@ $$
 
 I am too busy being invaded by parasites (having to attend to basic obligations) to maintain the daily schedule. If I stop being a bitch I'll get back on it. Only time will tell.
 
-Main reference: Chapter 5 of Daniel Coray's [*Notes on Geometry and Arithmetic*](https://link.springer.com/book/10.1007/978-3-030-43781-7). All rings are commutative with 1
+Main reference: Chapter 5 of Daniel Coray's [*Notes on Geometry and Arithmetic*](https://link.springer.com/book/10.1007/978-3-030-43781-7). All rings are commutative with 1.
 
 ## Recap and aim for today
 

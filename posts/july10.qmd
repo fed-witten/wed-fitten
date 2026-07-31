@@ -1,0 +1,59 @@
+---
+title: "Hilbert's Nullstellensatz: The Weak Nullstellensatz Day 1"
+date: 07/31/2026
+---
+
+::: {.hidden}
+$$
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fP}{\mathfrak{P}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+\newcommand{\SL}{\text{SL}}
+\newcommand{\Frac}{\text{Frac}}
+$$
+:::
+
+## Celebration
+
+Today we're celebrating *500 consecutive days* of daily posts on this Blog. Stupendous! We celebrate by starting on a nice theorem: the weak Nullstellensatz.
+
+Since I have been dedicated for such a long time, this post will be somewhat short to give myself a break and a pat on the back.
+
+Main reference: Chapter 5 of Daniel Coray's [*Notes on Geometry and Arithmetic*](https://link.springer.com/book/10.1007/978-3-030-43781-7). All rings are commutative with 1.
+
+## The Weak Nullstellensatz
+
+Recall that for a field $k$ with a fixed algebraic closure $\overline{k}$, $\bA_k^n$ is the set $$k^n=\{(a_1,a_2,...,a_n):a_i\in \overline{k}\}.$$
+
+**Theorem (The Weak Nullstellensatz).** Let $k$ be a field with a fixed algebraic closure $\overline{k}$. Let $\fm\subset k[x_1,x_2,...,x_n]$ be a maximal ideal; we define $$Y=Z(\fm)=\{P\in \bA_k^n: f(P)=0\text{ for all }f\in \fm\}\subset \bA_k^n.$$ Then $$Y(\overline{k})\neq\emptyset.$$
+
+### Beginning of proof
+
+Since $\fm\subset k[x_1,x_2,...,x_n]$ is maximal, the quotient $K=k[x_1,x_2,...,x_n]/\fm$ is a field; in particular, it is a field extension of $k$. Let $\pi:k\to K$ denote the canonical quotient map and consider the classes $\alpha_i=\pi(x_i)$ for $i=1,2,...,n.$ Then for all $f\in \fm$, $f\in \ker\pi$, so $$0+\fm=\pi(f(x_1,x_2,...,x_n))+\fm=f(\alpha_1,\alpha_2,...,\alpha_n)+\fm \in K.$$ We would be done if we knew that $(\alpha_1,\alpha_2,...,\alpha_n)\in \bA_k^n$, but we do not know whether the $\alpha_i$ are algebraic.
+
+Tomorrow we will prove that they are. I invite the reader to join me in thinking about why the $\alpha_i$ should be algebraic before we go through the somewhat technical proof.
