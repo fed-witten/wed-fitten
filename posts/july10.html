@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-07-09">
+<meta name="dcterms.date" content="2026-07-31">
 
-<title>Hilbert’s Nullstellensatz: Integral Extensions Day 4 – mathslop</title>
+<title>Hilbert’s Nullstellensatz: The Weak Nullstellensatz Day 1 – mathslop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -142,9 +142,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#recap-and-aim-for-today" id="toc-recap-and-aim-for-today" class="nav-link active" data-scroll-target="#recap-and-aim-for-today">Recap and aim for today</a></li>
-  <li><a href="#some-corollaries-of-proposition-1" id="toc-some-corollaries-of-proposition-1" class="nav-link" data-scroll-target="#some-corollaries-of-proposition-1">Some corollaries of Proposition 1</a></li>
-  <li><a href="#tomorrow" id="toc-tomorrow" class="nav-link" data-scroll-target="#tomorrow">Tomorrow</a></li>
+  <li><a href="#celebration" id="toc-celebration" class="nav-link active" data-scroll-target="#celebration">Celebration</a></li>
+  <li><a href="#the-weak-nullstellensatz" id="toc-the-weak-nullstellensatz" class="nav-link" data-scroll-target="#the-weak-nullstellensatz">The Weak Nullstellensatz</a>
+  <ul class="collapse">
+  <li><a href="#beginning-of-proof" id="toc-beginning-of-proof" class="nav-link" data-scroll-target="#beginning-of-proof">Beginning of proof</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -153,7 +155,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Hilbert’s Nullstellensatz: Integral Extensions Day 4</h1>
+<h1 class="title">Hilbert’s Nullstellensatz: The Weak Nullstellensatz Day 1</h1>
 </div>
 
 
@@ -164,7 +166,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 9, 2026</p>
+      <p class="date">July 31, 2026</p>
     </div>
   </div>
   
@@ -210,42 +212,23 @@ window.Quarto = {
 \newcommand{\Frac}{\text{Frac}}
 \]</span></p>
 </div>
-<p>I am too busy being invaded by parasites (having to attend to basic obligations) to maintain the daily schedule. If I stop being a bitch I’ll get back on it. Only time will tell.</p>
+<section id="celebration" class="level2">
+<h2 class="anchored" data-anchor-id="celebration">Celebration</h2>
+<p>Today we’re celebrating <em>500 consecutive days</em> of daily posts on this Blog. Stupendous! We celebrate by starting on a nice theorem: the weak Nullstellensatz.</p>
+<p>Since I have been dedicated for such a long time, this post will be somewhat short to give myself a break and a pat on the back.</p>
 <p>Main reference: Chapter 5 of Daniel Coray’s <a href="https://link.springer.com/book/10.1007/978-3-030-43781-7"><em>Notes on Geometry and Arithmetic</em></a>. All rings are commutative with 1.</p>
-<section id="recap-and-aim-for-today" class="level2">
-<h2 class="anchored" data-anchor-id="recap-and-aim-for-today">Recap and aim for today</h2>
-<p>Last time we completed the proof of the following proposition:</p>
-<p><strong>Proposition 1.</strong> Let <span class="math inline">\(R\subset S\)</span> be two rings and let <span class="math inline">\(\xi\in S\)</span>. Then the following are equivalent:</p>
-<ol type="a">
-<li><span class="math inline">\(\xi\)</span> is integral over <span class="math inline">\(R\)</span>;</li>
-<li>The ring <span class="math inline">\(R[\xi]\)</span> is an <span class="math inline">\(R\)</span>-module of finite type;</li>
-<li><span class="math inline">\(R[\xi]\)</span> is contained in a ring <span class="math inline">\(T\)</span>, which is an <span class="math inline">\(R\)</span>-module of finite type.</li>
-</ol>
-<p>We assumed that <span class="math inline">\(R\)</span> is Noetherian to give a quick proof of <span class="math inline">\((c)\Rightarrow (a)\)</span>. This assumption is not necessary, and when <span class="math inline">\(R\)</span> is not Noetherian the result follows by a version of the Cayley-Hamilton theorem for modules that I do not plan to write up; see yesterday’s post for references. Coordinate rings of varieties and rings of integers of number fields are the rings we are most concerned with, and these are always Noetherian.</p>
-<p>Our main goal for today is to show that given an extension of rings <span class="math inline">\(R\subset S\)</span>, the set of elements of <span class="math inline">\(S\)</span> that are integral over <span class="math inline">\(R\)</span> forms a ring. This will follow from a sequence of easy corollaries of Proposition 1.</p>
 </section>
-<section id="some-corollaries-of-proposition-1" class="level2">
-<h2 class="anchored" data-anchor-id="some-corollaries-of-proposition-1">Some corollaries of Proposition 1</h2>
-<p><strong>Corollary 1.</strong> Let <span class="math inline">\(\xi_1,\xi_2,...,\xi_n\in S\)</span> be integral elements over <span class="math inline">\(R\)</span>. Then the ring <span class="math inline">\(R[\xi_1,\xi_2,...,\xi_n]\)</span> is an <span class="math inline">\(R\)</span>-module of finite type.</p>
-<p><em>Proof sketch.</em> This is an easy induction argument.</p>
-<p>The base case <span class="math inline">\(n=1\)</span> is the implication <span class="math inline">\(a\Rightarrow b\)</span> from Proposition 1.</p>
-<p>If the proposition holds for each positive integer less than <span class="math inline">\(n&gt;1,\)</span> then we see that <span class="math display">\[A[\xi_1,\xi_2,...,\xi_n]=A[\xi_1,\xi_2,...,\xi_{n-1}][\xi_n]\]</span> is a finite type <span class="math inline">\(A[\xi_1,\xi_2,...,\xi_{n-1}]\)</span>-module by the base case, and in turn <span class="math inline">\(A[\xi_1,\xi_2,...,\xi_{n-1}]\)</span> is a finite type <span class="math inline">\(A\)</span>-module by the induction hypothesis. Take a system of generators for each, then take all products of these generators; this forms a finite system of generators for <span class="math inline">\(A[\xi_1,\xi_2,...,\xi_n]\)</span> as an <span class="math inline">\(A\)</span>-module.</p>
-<p><span style="float: right;"><span class="math inline">\(\square\)</span></span><br>
-</p>
-<p><strong>Corollary 2.</strong> If <span class="math inline">\(\alpha,\beta\)</span> are integral over <span class="math inline">\(R\)</span>, then so are <span class="math inline">\(\alpha+\beta\)</span> and <span class="math inline">\(\alpha\cdot\beta.\)</span></p>
-<p><em>Proof.</em> By Corollary 1, <span class="math inline">\(R[\alpha,\beta]\)</span> is a finite type <span class="math inline">\(R\)</span>-module. Since <span class="math inline">\(R[\alpha+\beta],R[\alpha\cdot\beta]\subset R[\alpha,\beta]\)</span>, the implication <span class="math inline">\(c\Rightarrow a\)</span> from Proposition 1 implies <span class="math inline">\(\alpha+\beta\)</span> and <span class="math inline">\(\alpha\cdot\beta\)</span> are integral over <span class="math inline">\(R\)</span>.</p>
-<p><span style="float: right;"><span class="math inline">\(\square\)</span></span><br>
-</p>
-<p>In particular, we see that <span class="math inline">\(R[\alpha]\subset S\)</span> is integral over <span class="math inline">\(R\)</span> if and only if <span class="math inline">\(\alpha\)</span> is integral over <span class="math inline">\(R\)</span>, and the elements of <span class="math inline">\(S\)</span> that are integral over <span class="math inline">\(R\)</span> form a ring.</p>
-<p><strong>Example 1.</strong> When <span class="math inline">\(R=\ZZ\)</span> and <span class="math inline">\(S=\overline{\QQ}\)</span>, the elements of <span class="math inline">\(\overline{\QQ}\)</span> integral over <span class="math inline">\(\ZZ\)</span> are called the <em>algebraic integers</em>. When <span class="math inline">\(K/\QQ\)</span> is a finite field extension, the set of elements of <span class="math inline">\(K\)</span> integral over <span class="math inline">\(\ZZ\)</span> is called the <em>ring of integers</em> of <span class="math inline">\(K\)</span>, typically denoted <span class="math inline">\(\cO_K\)</span>.</p>
-<p><strong>Corollary 3</strong> If <span class="math inline">\(R\subset S\subset T\)</span> are rings with <span class="math inline">\(T\)</span> integral over <span class="math inline">\(S\)</span> and <span class="math inline">\(S\)</span> integral over <span class="math inline">\(R\)</span>, then <span class="math inline">\(T\)</span> is integral over <span class="math inline">\(R\)</span>.</p>
-<p><em>Non-proof.</em> Exercise or look at Coray. Or come back tomorrow and I might do it.</p>
-</section>
-<section id="tomorrow" class="level2">
-<h2 class="anchored" data-anchor-id="tomorrow">Tomorrow</h2>
-<p>We’ve covered enough stuff to do the Weak Nullstellensatz tomorrow. We should then be able to prove the Nullstellensatz the following day.</p>
+<section id="the-weak-nullstellensatz" class="level2">
+<h2 class="anchored" data-anchor-id="the-weak-nullstellensatz">The Weak Nullstellensatz</h2>
+<p>Recall that for a field <span class="math inline">\(k\)</span> with a fixed algebraic closure <span class="math inline">\(\overline{k}\)</span>, <span class="math inline">\(\bA_k^n\)</span> is the set <span class="math display">\[k^n=\{(a_1,a_2,...,a_n):a_i\in \overline{k}\}.\]</span></p>
+<p><strong>Theorem (The Weak Nullstellensatz).</strong> Let <span class="math inline">\(k\)</span> be a field with a fixed algebraic closure <span class="math inline">\(\overline{k}\)</span>. Let <span class="math inline">\(\fm\subset k[x_1,x_2,...,x_n]\)</span> be a maximal ideal; we define <span class="math display">\[Y=Z(\fm)=\{P\in \bA_k^n: f(P)=0\text{ for all }f\in \fm\}\subset \bA_k^n.\]</span> Then <span class="math display">\[Y(\overline{k})\neq\emptyset.\]</span></p>
+<section id="beginning-of-proof" class="level3">
+<h3 class="anchored" data-anchor-id="beginning-of-proof">Beginning of proof</h3>
+<p>Since <span class="math inline">\(\fm\subset k[x_1,x_2,...,x_n]\)</span> is maximal, the quotient <span class="math inline">\(K=k[x_1,x_2,...,x_n]/\fm\)</span> is a field; in particular, it is a field extension of <span class="math inline">\(k\)</span>. Let <span class="math inline">\(\pi:k\to K\)</span> denote the canonical quotient map and consider the classes <span class="math inline">\(\alpha_i=\pi(x_i)\)</span> for <span class="math inline">\(i=1,2,...,n.\)</span> Then for all <span class="math inline">\(f\in \fm\)</span>, <span class="math inline">\(f\in \ker\pi\)</span>, so <span class="math display">\[0+\fm=\pi(f(x_1,x_2,...,x_n))+\fm=f(\alpha_1,\alpha_2,...,\alpha_n)+\fm \in K.\]</span> We would be done if we knew that <span class="math inline">\((\alpha_1,\alpha_2,...,\alpha_n)\in \bA_k^n\)</span>, but we do not know whether the <span class="math inline">\(\alpha_i\)</span> are algebraic.</p>
+<p>Tomorrow we will prove that they are. I invite the reader to join me in thinking about why the <span class="math inline">\(\alpha_i\)</span> should be algebraic before we go through the somewhat technical proof.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
