@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-08-01">
 
-<title>mathslop dot org – mathslop</title>
+<title>Hilbert’s Nullstellensatz: The Weak Nullstellensatz Days 2-? – mathslop</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +27,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7cdcdf02272c52d1e3032ea962f2ad39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,7 +102,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -111,7 +112,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">mathslop</span>
     </a>
   </div>
@@ -122,7 +123,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -141,7 +142,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#almost-actually-not-even-close-to-daily-math" id="toc-almost-actually-not-even-close-to-daily-math" class="nav-link active" data-scroll-target="#almost-actually-not-even-close-to-daily-math">(Almost (actually not even close to)) Daily Math</a></li>
+  <li><a href="#the-weak-nullstellensatz" id="toc-the-weak-nullstellensatz" class="nav-link active" data-scroll-target="#the-weak-nullstellensatz">The Weak Nullstellensatz</a>
+  <ul class="collapse">
+  <li><a href="#last-time" id="toc-last-time" class="nav-link" data-scroll-target="#last-time">Last time</a></li>
+  <li><a href="#completing-the-proof" id="toc-completing-the-proof" class="nav-link" data-scroll-target="#completing-the-proof">Completing the proof</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -150,7 +155,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">mathslop dot org</h1>
+<h1 class="title">Hilbert’s Nullstellensatz: The Weak Nullstellensatz Days 2-?</h1>
 </div>
 
 
@@ -158,6 +163,12 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 1, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -198,29 +209,62 @@ window.Quarto = {
 \newcommand{\Spa}{\text{Spa}}
 \newcommand{\Spf}{\text{Spf}}
 \newcommand{\SL}{\text{SL}}
-\newcommand{\GL}{\text{GL}}
+\newcommand{\Frac}{\text{Frac}}
 \]</span></p>
 </div>
-<p>Goal is to write some math every day. I make no promise on quality, but ideally these get better over time.</p>
-<section id="almost-actually-not-even-close-to-daily-math" class="level2">
-<h2 class="anchored" data-anchor-id="almost-actually-not-even-close-to-daily-math">(Almost (actually not even close to)) Daily Math</h2>
-<ul>
-<li><a href="./posts/aug1.html">8/1 Hilbert’s Nullstellensatz: The Weak Nullstellensatz Days 2-?</a></li>
-<li><a href="./posts/july10.html">7/31 Hilbert’s Nullstellensatz: The Weak Nullstellensatz Day 1</a></li>
-<li><a href="./posts/july5.html">7/9 Hilbert’s Nullstellensatz: Integral Extensions Day 4</a></li>
-<li><a href="./posts/july4.html">7/4 Hilbert’s Nullstellensatz: Integral Extensions Day 3</a></li>
-<li><a href="./posts/july3.html">7/3 Hilbert’s Nullstellensatz: Integral Extensions Day 2</a></li>
-<li><a href="./posts/july2.html">7/2 Hilbert’s Nullstellensatz: Integral Extensions Day 1</a></li>
-<li><a href="./posts/june19.html">6/19-6/??: The Prime Spectrum of a Ring</a></li>
-<li><a href="./posts/june18.html">6/18: An Elementary Number Theory Problem (Cont.)</a></li>
-<li><a href="./posts/june17.html">6/17: An Elementary Number Theory Problem</a></li>
-<li><a href="./posts/june16.html">6/16: Problem A1 from the 2024 Putnam</a></li>
-<li><a href="./posts/june15.html">6/15: Problem B1 from the 2025 Putnam</a></li>
-<li><a href="./posts/june14.html">6/14: Problem B2 from the 2022 Putnam</a></li>
-<li><a href="./posts/june13.html">6/13: Problem B3 from the 2022 Putnam</a></li>
-</ul>
+<p>We continue with the Weak Nullstellensatz. Instead of breaking this into multiple posts, I’ll just continue here until we finish.</p>
+<p>Main reference: Chapter 5 of Daniel Coray’s <a href="https://link.springer.com/book/10.1007/978-3-030-43781-7"><em>Notes on Geometry and Arithmetic</em></a>. All rings are commutative with 1.</p>
+<section id="the-weak-nullstellensatz" class="level2">
+<h2 class="anchored" data-anchor-id="the-weak-nullstellensatz">The Weak Nullstellensatz</h2>
+<p>Our goal is to finish the proof of this theorem:</p>
+<p><strong>Theorem (The Weak Nullstellensatz).</strong> Let <span class="math inline">\(k\)</span> be a field with a fixed algebraic closure <span class="math inline">\(\overline{k}\)</span>. Let <span class="math inline">\(\fm\subset k[x_1,x_2,...,x_n]\)</span> be a maximal ideal; we define <span class="math display">\[Y=Z(\fm)=\{P\in \bA_k^n: f(P)=0\text{ for all }f\in \fm\}\subset \bA_k^n.\]</span> Then <span class="math display">\[Y(\overline{k})\neq\emptyset.\]</span></p>
+<section id="last-time" class="level3">
+<h3 class="anchored" data-anchor-id="last-time">Last time</h3>
+<p>Last time, we showed that <span class="math inline">\((\alpha_1,\alpha_2,...,\alpha_n)\)</span> is killed by all <span class="math inline">\(f\in \fm\)</span>; recall that <span class="math inline">\(\alpha_i=\pi(x_i)\)</span>, where <span class="math inline">\(\pi:k[x_1,x_2,...,x_n]\to K=k[x_1,x_2,...,x_n]/\fm\)</span> is the canonical quotient map. Since <span class="math inline">\(\fm\)</span> is maximal, <span class="math inline">\(K\)</span> is a field, in fact a field extension of <span class="math inline">\(k\)</span>. Thus, the coordinates of the point <span class="math inline">\((\alpha_1,\alpha_2,...,\alpha_n)\)</span> lie in an extension field of <span class="math inline">\(k\)</span>, but we need this extension to be algebraic to conclude that <span class="math inline">\(Y(\overline{k})\neq \emptyset\)</span>.</p>
+</section>
+<section id="completing-the-proof" class="level3">
+<h3 class="anchored" data-anchor-id="completing-the-proof">Completing the proof</h3>
+<p>By the above, it suffices to show the following proposition (Proposition 5.2.2 in Coray; Coray credits this to Zariski-Samuel, Chap. VII, Section 3, p.&nbsp;165):</p>
+<p><strong>Proposition 1.</strong> If an algebra of finite type <span class="math inline">\(K=k[\alpha_1,\alpha_2,...,\alpha_n]\)</span> is a field, then <span class="math inline">\(K/k\)</span> is an algebraic extension.</p>
+<section id="preliminaries" class="level4">
+<h4 class="anchored" data-anchor-id="preliminaries">Preliminaries</h4>
+<p>First we’ll recall some definitions and some field theory results we will not prove.</p>
+<p><strong>Definition 1.</strong> Let <span class="math inline">\(R\)</span> be a ring. An <span class="math inline">\(R\)</span>-algebra is a ring <span class="math inline">\(R'\)</span> equippied with a ring homomorphism <span class="math inline">\(\vp:R\to R'\)</span> called the <em>structure map</em>. We say an <span class="math inline">\(R\)</span>-algebra <span class="math inline">\(R'\)</span> with structure map <span class="math inline">\(\vp:R\to R'\)</span> is a <em>finitely generated</em> <span class="math inline">\(R\)</span><em>-algebra</em> or an <span class="math inline">\(R\)</span><em>-algebra of finite type</em> or is <em>algebra-finite</em> over <span class="math inline">\(R\)</span> if there exist <span class="math inline">\(x_1,x_2,...,x_n\in R'\)</span> such that <span class="math inline">\(R'=\vp(R)[x_1,x_2,...,x_n].\)</span></p>
+<p><strong>Example.</strong> Any quotient <span class="math inline">\(K=k[x_1,x_2,...,x_n]/I\)</span> where <span class="math inline">\(I\subset k[x_1,x_2,...,x_n]\)</span> is a proper ideal is a <span class="math inline">\(k\)</span>-algebra of finite type: <span class="math inline">\(K=k[\alpha_1,\alpha_2,...,\alpha_n]\)</span> where <span class="math inline">\(\alpha_i=\pi(x_i)\)</span>.</p>
+<p><strong>Definition 2.</strong> If <span class="math inline">\(K/k\)</span> and <span class="math inline">\(L/k\)</span> are two field extensions of <span class="math inline">\(k\)</span>, a <span class="math inline">\(k\)</span><em>-embedding</em> is a field homomorphism <span class="math inline">\(\sigma:K\to L\)</span> such that <span class="math inline">\(\sigma|_k=\id\)</span>.</p>
+<p><strong>Theorem 1 (composition of algebraic extensions is algebraic).</strong> If <span class="math inline">\(L/K\)</span> and <span class="math inline">\(K/k\)</span> are algebraic extensions, then <span class="math inline">\(L/k\)</span> is algebraic.</p>
+<p><strong>Theorem 2 (algebraic extensions embed into an algebraic closure).</strong> Let <span class="math inline">\(K/k\)</span> be an algebraic extension. Then there is a <span class="math inline">\(k\)</span>-embedding <span class="math inline">\(\sigma:K\to \overline{k}\)</span>.</p>
+<p>The reason for introducing these notions is as follows. We will aim to prove Proposition 1 by induction; the base case <span class="math inline">\(n=1\)</span>, where <span class="math inline">\(K=k[\alpha_1],\)</span> is easy. The induction hypothesis then will be that for some <span class="math inline">\(n&gt;1\)</span>, a <span class="math inline">\(k\)</span>-algebra of finite type <span class="math inline">\(k[\beta_1,\beta_2,...,\beta_{n-1}]\)</span> that is also a field is an algebraic extension of <span class="math inline">\(k\)</span>. If we let <span class="math inline">\(k'=k(\alpha_1)\)</span>, then the induction hypothesis implies that <span class="math inline">\(k'[\alpha_2,...,\alpha_{n}]\)</span> is an algebraic extension, so it suffices to show that <span class="math inline">\(k(\alpha_1)\)</span> is an algebraic extension, since Theorem 1 then implies that <span class="math display">\[K=k[\alpha_1,\alpha_2,...,\alpha_n]=k'[\alpha_2,...,\alpha_n]/k\]</span> is algebraic. Then Theorem 2 implies that there is a <span class="math inline">\(k\)</span>-embedding of <span class="math inline">\(K\)</span> into <span class="math inline">\(\overline{k}\)</span>, and we will be able to conclude that our point <span class="math inline">\((\alpha_1,\alpha_2,...,\alpha_n)\)</span> in fact lies in <span class="math inline">\(\bA_k^n\)</span>.</p>
+<p>Note that it is <em>not</em> immediate from the base case that <span class="math inline">\(k(\alpha_1)\)</span> is algebraic: the base case proved that if <span class="math inline">\(K=k[\alpha_1]\)</span> is a field, then it is an algebraic extension, but now our hypothesis is that <span class="math inline">\(k[\alpha_1,\alpha_2,...,\alpha_n]\)</span> is a field, and the inverse of <span class="math inline">\(\alpha_1\)</span> inside <span class="math inline">\(k[\alpha_1,\alpha_2,...,\alpha_n]\)</span> need not lie in <span class="math inline">\(k[\alpha_1]\)</span> (that is, <span class="math inline">\(k[\alpha_1]\)</span> need not be a field).</p>
+</section>
+<section id="proof-of-proposition-1" class="level4">
+<h4 class="anchored" data-anchor-id="proof-of-proposition-1">Proof of Proposition 1</h4>
+<p><strong>Base case <span class="math inline">\(n=1\)</span>:</strong> If <span class="math inline">\(K=k[\alpha_1]\)</span> is a field, then <span class="math inline">\(\alpha_1\)</span> is invertible. Hence, there exists an <span class="math inline">\(m\geq 0\)</span> and an element <span class="math display">\[f=a_0\alpha_1^m+...+a_m\in k[\alpha_1]\]</span> with <span class="math inline">\(a_0,a_1,...,a_m\in k\)</span>, <span class="math inline">\(a_0\neq 0\)</span> such that <span class="math inline">\(f=\alpha_1^{-1}\)</span>. Then <span class="math inline">\(\alpha_1f=1\)</span> and the relation <span class="math display">\[0=\alpha_1f-1=a_0\alpha_1^{m+1}+...+a_m\alpha_1-1\]</span> shows that <span class="math inline">\(\alpha_1\)</span> is algebraic over <span class="math inline">\(k\)</span>.</p>
+<p><strong>Induction hypothesis:</strong> Now let <span class="math inline">\(n&gt;1\)</span> and assume that a for any field <span class="math inline">\(k\)</span>, a <span class="math inline">\(k\)</span>-algebra of finite type <span class="math inline">\(k[\beta_1,\beta_2,...,\beta_{n-1}]\)</span> that is also a field is an algebraic extension.</p>
+<p>Now consider the <span class="math inline">\(k\)</span>-algebra of finite type <span class="math inline">\(K'=k[\alpha_1,\alpha_2,...,\alpha_n]\)</span> and assume that <span class="math inline">\(K'\)</span> is a field. Then each <span class="math inline">\(\alpha_i\)</span> is invertible in <span class="math inline">\(K'\)</span>, and in particular we can consider the subfield <span class="math inline">\(k'=k(\alpha_1)\subset K'\)</span>. The induction hypothesis implies that <span class="math display">\[K=k'[\alpha_2,\alpha_3,...,\alpha_n]\]</span> is an algebraic extension of <span class="math inline">\(k'\)</span>.</p>
+<p>Thus, for each <span class="math inline">\(i=2,3,...,n\)</span>, there exists a monic polynomial <span class="math inline">\(f_i\in k'[x]\)</span> such that <span class="math inline">\(f_i(\alpha_i)=0\)</span>.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Hence there exists a nonzero polynomial <span class="math inline">\(g\in k[x]\)</span> such that <span class="math inline">\(g(\alpha_1)\neq 0\)</span> and the products <span class="math inline">\(g(\alpha_1)\alpha_i\)</span> (<span class="math inline">\(i=2,3,...,n\)</span>) are integral over <span class="math inline">\(k[\alpha_1]\)</span>.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I put this statement in a callout box because it is not immediately obvious to me, and certainly is not immediate from the definition of “algebraic” (unless I am being retarded, which is not unlikely) so I will think it through here.</p>
+<p>Recall that <span class="math inline">\(g(\alpha_1)\alpha_i\)</span> is integral over <span class="math inline">\(k[\alpha_1]\)</span> if there exists an <span class="math inline">\(m&gt;0\)</span> and <span class="math inline">\(f_0,f_1,...,f_{m-1}\in k[\alpha_1]\)</span> such that <span class="math display">\[(g(\alpha_1)\alpha_i)^m+f_{m-1}\cdot (g(\alpha_1)\alpha_i)^{m-1}+...+f_0=0,\]</span> i.e.&nbsp;that <span class="math inline">\(g(\alpha_1)\alpha_i\)</span> is a root of a monic polynomial with coefficients in <span class="math inline">\(k[\alpha_1]\)</span>.</p>
+<p>(End point for 8/1; will finish tomorrow)</p>
+</div>
+</div>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
