@@ -40,6 +40,7 @@ Goal is to write some math every day. I make no promise on quality, but ideally 
 
 ## (Almost (actually not even close to)) Daily Math
 
+- [8/1 Hilbert's Nullstellensatz: The Weak Nullstellensatz Days 2-?](posts/aug1.qmd)
 - [7/31 Hilbert's Nullstellensatz: The Weak Nullstellensatz Day 1](posts/july10.qmd)
 - [7/9 Hilbert's Nullstellensatz: Integral Extensions Day 4](posts/july5.qmd)
 - [7/4 Hilbert's Nullstellensatz: Integral Extensions Day 3](posts/july4.qmd)

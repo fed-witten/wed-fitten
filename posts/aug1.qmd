@@ -1,0 +1,98 @@
+---
+title: "Hilbert's Nullstellensatz: The Weak Nullstellensatz Days 2-?"
+date: 08/01/2026
+---
+
+::: {.hidden}
+$$
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fP}{\mathfrak{P}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\vp}{\varphi}
+\newcommand{\sli}{{s_l}_i}
+\newcommand{\smi}{{s_m}_i}
+\newcommand{\HomC}{\text{Hom}_{\mathscr{C}}}
+\newcommand{\mf}{\mathscr{F}}
+\newcommand{\Spec}{\text{Spec}}
+\newcommand{\Spa}{\text{Spa}}
+\newcommand{\Spf}{\text{Spf}}
+\newcommand{\SL}{\text{SL}}
+\newcommand{\Frac}{\text{Frac}}
+$$
+:::
+
+We continue with the Weak Nullstellensatz. Instead of breaking this into multiple posts, I'll just continue here until we finish.
+
+Main reference: Chapter 5 of Daniel Coray's [*Notes on Geometry and Arithmetic*](https://link.springer.com/book/10.1007/978-3-030-43781-7). All rings are commutative with 1.
+
+## The Weak Nullstellensatz
+
+Our goal is to finish the proof of this theorem:
+
+**Theorem (The Weak Nullstellensatz).** Let $k$ be a field with a fixed algebraic closure $\overline{k}$. Let $\fm\subset k[x_1,x_2,...,x_n]$ be a maximal ideal; we define $$Y=Z(\fm)=\{P\in \bA_k^n: f(P)=0\text{ for all }f\in \fm\}\subset \bA_k^n.$$ Then $$Y(\overline{k})\neq\emptyset.$$
+
+### Last time
+
+Last time, we showed that $(\alpha_1,\alpha_2,...,\alpha_n)$ is killed by all $f\in \fm$; recall that $\alpha_i=\pi(x_i)$, where $\pi:k[x_1,x_2,...,x_n]\to K=k[x_1,x_2,...,x_n]/\fm$ is the canonical quotient map. Since $\fm$ is maximal, $K$ is a field, in fact a field extension of $k$. Thus, the coordinates of the point $(\alpha_1,\alpha_2,...,\alpha_n)$ lie in an extension field of $k$, but we need this extension to be algebraic to conclude that $Y(\overline{k})\neq \emptyset$.
+
+### Completing the proof
+
+By the above, it suffices to show the following proposition (Proposition 5.2.2 in Coray; Coray credits this to Zariski-Samuel, Chap. VII, Section 3, p. 165):
+
+**Proposition 1.** If an algebra of finite type $K=k[\alpha_1,\alpha_2,...,\alpha_n]$ is a field, then $K/k$ is an algebraic extension.
+
+#### Preliminaries
+
+First we'll recall some definitions and some field theory results we will not prove.
+
+**Definition 1.** Let $R$ be a ring. An $R$-algebra is a ring $R'$ equippied with a ring homomorphism $\vp:R\to R'$ called the *structure map*. We say an $R$-algebra $R'$ with structure map $\vp:R\to R'$ is a *finitely generated* $R$*-algebra* or an $R$*-algebra of finite type* or is *algebra-finite* over $R$ if there exist $x_1,x_2,...,x_n\in R'$ such that $R'=\vp(R)[x_1,x_2,...,x_n].$
+
+**Example.** Any quotient $K=k[x_1,x_2,...,x_n]/I$ where $I\subset k[x_1,x_2,...,x_n]$ is a proper ideal is a $k$-algebra of finite type: $K=k[\alpha_1,\alpha_2,...,\alpha_n]$ where $\alpha_i=\pi(x_i)$. 
+
+**Definition 2.** If $K/k$ and $L/k$ are two field extensions of $k$, a $k$*-embedding* is a field homomorphism $\sigma:K\to L$ such that $\sigma|_k=\id$.
+
+**Theorem 1 (composition of algebraic extensions is algebraic).** If $L/K$ and $K/k$ are algebraic extensions, then $L/k$ is algebraic.
+
+**Theorem 2 (algebraic extensions embed into an algebraic closure).** Let $K/k$ be an algebraic extension. Then there is a $k$-embedding $\sigma:K\to \overline{k}$.
+
+The reason for introducing these notions is as follows. We will aim to prove Proposition 1 by induction; the base case $n=1$, where $K=k[\alpha_1],$ is easy. The induction hypothesis then will be that for some $n>1$, a $k$-algebra of finite type $k[\beta_1,\beta_2,...,\beta_{n-1}]$ that is also a field is an algebraic extension of $k$. If we let $k'=k(\alpha_1)$, then the induction hypothesis implies that $k'[\alpha_2,...,\alpha_{n}]$ is an algebraic extension, so it suffices to show that $k(\alpha_1)$ is an algebraic extension, since Theorem 1 then implies that $$K=k[\alpha_1,\alpha_2,...,\alpha_n]=k'[\alpha_2,...,\alpha_n]/k$$ is algebraic.  Then Theorem 2 implies that there is a $k$-embedding of $K$ into $\overline{k}$, and we will be able to conclude that our point $(\alpha_1,\alpha_2,...,\alpha_n)$ in fact lies in $\bA_k^n$.
+
+Note that it is *not* immediate from the base case that $k(\alpha_1)$ is algebraic: the base case proved that if $K=k[\alpha_1]$ is a field, then it is an algebraic extension, but now our hypothesis is that $k[\alpha_1,\alpha_2,...,\alpha_n]$ is a field, and the inverse of $\alpha_1$ inside $k[\alpha_1,\alpha_2,...,\alpha_n]$ need not lie in $k[\alpha_1]$ (that is, $k[\alpha_1]$ need not be a field).
+
+#### Proof of Proposition 1
+
+**Base case $n=1$:** If $K=k[\alpha_1]$ is a field, then $\alpha_1$ is invertible. Hence, there exists an $m\geq 0$ and an element $$f=a_0\alpha_1^m+...+a_m\in k[\alpha_1]$$ with $a_0,a_1,...,a_m\in k$, $a_0\neq 0$ such that $f=\alpha_1^{-1}$. Then $\alpha_1f=1$ and the relation $$0=\alpha_1f-1=a_0\alpha_1^{m+1}+...+a_m\alpha_1-1$$ shows that $\alpha_1$ is algebraic over $k$.
+
+**Induction hypothesis:** Now let $n>1$ and assume that a for any field $k$, a $k$-algebra of finite type $k[\beta_1,\beta_2,...,\beta_{n-1}]$ that is also a field is an algebraic extension.
+
+Now consider the $k$-algebra of finite type $K'=k[\alpha_1,\alpha_2,...,\alpha_n]$ and assume that $K'$ is a field. Then each $\alpha_i$ is invertible in $K'$, and in particular we can consider the subfield $k'=k(\alpha_1)\subset K'$. The induction hypothesis implies that $$K=k'[\alpha_2,\alpha_3,...,\alpha_n]$$ is an algebraic extension of $k'$.
+
+Thus, for each $i=2,3,...,n$, there exists a monic polynomial $f_i\in k'[x]$ such that $f_i(\alpha_i)=0$.
+
+::: {.callout-note collapse="true" icon=false appearance="simple"}
+## Hence there exists a nonzero polynomial $g\in k[x]$ such that $g(\alpha_1)\neq 0$ and the products $g(\alpha_1)\alpha_i$ ($i=2,3,...,n$) are integral over $k[\alpha_1]$.
+
+I put this statement in a callout box because it is not immediately obvious to me, and certainly is not immediate from the definition of "algebraic" (unless I am being retarded, which is not unlikely) so I will think it through here.
+
+Recall that $g(\alpha_1)\alpha_i$ is integral over $k[\alpha_1]$ if there exists an $m>0$ and $f_0,f_1,...,f_{m-1}\in k[\alpha_1]$ such that $$(g(\alpha_1)\alpha_i)^m+f_{m-1}\cdot (g(\alpha_1)\alpha_i)^{m-1}+...+f_0=0,$$ i.e. that $g(\alpha_1)\alpha_i$ is a root of a monic polynomial with coefficients in $k[\alpha_1]$.
+
+(End point for 8/1; will finish tomorrow)
+
+:::
